@@ -49,7 +49,7 @@ const SITE_CONFIG = {
    -------------------------------------------------- */
 
 const SMARTLINK = {
-  primary: "https://ignoringexcepting.com/tirmtkpyi?key=f05059565202e05f940b6a84b893c584",
+  primary: "https://www.profitableratecpmnetwork.com/t43u33iyx5?key=2ae9dfead6d65bda1889c6a2e30810b1",
   secondary: ""
 };
 
