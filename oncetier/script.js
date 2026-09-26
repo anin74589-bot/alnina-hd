@@ -50,21 +50,42 @@ const storage = {
     try {
       return sessionStorage.getItem(key);
     } catch {
-      return null;
+      try {
+        return localStorage.getItem(key);
+      } catch {
+        return null;
+      }
     }
   },
   set(key, value) {
+    let stored = false;
+
     try {
       sessionStorage.setItem(key, value);
+      stored = true;
     } catch {
-      /* Storage can be blocked in privacy-restricted contexts. */
+      /* Try localStorage below. */
+    }
+
+    if (!stored) {
+      try {
+        localStorage.setItem(key, value);
+      } catch {
+        /* In-memory state remains authoritative for this page. */
+      }
     }
   },
   remove(key) {
     try {
       sessionStorage.removeItem(key);
     } catch {
-      /* Storage can be blocked in privacy-restricted contexts. */
+      /* Ignore storage errors. */
+    }
+
+    try {
+      localStorage.removeItem(key);
+    } catch {
+      /* Ignore storage errors. */
     }
   }
 };
@@ -76,7 +97,9 @@ const playerState = {
 
 const adState = {
   cooldownUntil: Number(storage.get(AD_COOLDOWN_KEY)) || 0,
-  timer: null
+  lastTriggerAt: 0,
+  timer: null,
+  opening: false
 };
 
 /* --------------------------------------------------
@@ -483,12 +506,25 @@ function getSmartlinkUrl() {
   return primary || secondary;
 }
 
+function syncAdCooldownFromStorage() {
+  const storedUntil = Number(storage.get(AD_COOLDOWN_KEY)) || 0;
+  if (storedUntil > adState.cooldownUntil) {
+    adState.cooldownUntil = storedUntil;
+  }
+  return adState.cooldownUntil;
+}
+
 function isAdReady() {
-  return Date.now() >= adState.cooldownUntil;
+  syncAdCooldownFromStorage();
+  const now = Date.now();
+  const memoryUntil = adState.lastTriggerAt + AD_COOLDOWN_MS;
+  return now >= Math.max(adState.cooldownUntil, memoryUntil);
 }
 
 function getAdCooldownRemaining() {
-  return Math.max(0, adState.cooldownUntil - Date.now());
+  syncAdCooldownFromStorage();
+  const memoryUntil = adState.lastTriggerAt + AD_COOLDOWN_MS;
+  return Math.max(0, Math.max(adState.cooldownUntil, memoryUntil) - Date.now());
 }
 
 function syncPlayerAdLayerVisibility() {
@@ -503,10 +539,12 @@ function syncPlayerAdLayerVisibility() {
 }
 
 function startAdCooldown() {
-  adState.cooldownUntil = Date.now() + AD_COOLDOWN_MS;
+  const nextUntil = Date.now() + AD_COOLDOWN_MS;
+  adState.cooldownUntil = Math.max(adState.cooldownUntil, nextUntil);
   storage.set(AD_COOLDOWN_KEY, String(adState.cooldownUntil));
-  // Hide the current player ad layer immediately, even when the Smartlink
-  // was triggered by another button and the page is not re-rendered.
+
+  // Hide the current player ad layer immediately. This is the global state,
+  // so every button shares the same 20-second cooldown.
   syncPlayerAdLayerVisibility();
 }
 
@@ -537,22 +575,26 @@ function scheduleAdCooldownRefresh() {
 function openSmartlink() {
   const url = getSmartlinkUrl();
 
-  if (!url || !isAdReady()) {
+  // Hard guard: one Smartlink opening at a time and one global cooldown.
+  if (adState.opening || !url || !isAdReady()) {
     return false;
   }
 
-  /*
-    The action is initiated by a real user click on the clearly-marked
-    advertisement layer, so normal popup-blocking rules are respected.
-  */
-  const opened = window.open(url, "_blank", "noopener,noreferrer");
+  adState.opening = true;
 
-  if (!opened) {
-    return false;
-  }
-
+  // Lock the cooldown BEFORE opening the Smartlink. This prevents a second
+  // click from opening another ad even if the mobile browser handles the
+  // new tab asynchronously or a popup result is ambiguous.
+  adState.lastTriggerAt = Date.now();
   startAdCooldown();
   scheduleAdCooldownRefresh();
+
+  /*
+    The action is initiated by a real user click, so normal popup-blocking
+    rules are respected.
+  */
+  window.open(url, "_blank", "noopener,noreferrer");
+  adState.opening = false;
   return true;
 }
 
