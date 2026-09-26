@@ -2187,6 +2187,10 @@ p {
    Stage 9: Advertisement System
    ================================================== */
 
+.player-ad-layer[hidden] {
+  display: none !important;
+}
+
 .player-ad-layer {
   position: absolute;
   inset: 0;
