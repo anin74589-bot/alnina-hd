@@ -152,15 +152,124 @@ function getSpecialVideos() {
   return selected.length ? selected.slice(0, 8) : videos.slice(-8);
 }
 
-function getVideoThumbnail(video, index = 0) {
-  if (video.thumbnail?.trim()) return video.thumbnail;
+const thumbnailCache = new Map();
+const thumbnailJobs = new Map();
 
-  const fallback = [
-    "welcome.png", "home.png", "popular.png",
-    "order.png", "special.png", "player.png"
-  ];
+function getCustomThumbnail(video) {
+  return video.thumbnail?.trim() || "";
+}
 
-  return `assets/wallpapers/${fallback[index % fallback.length]}`;
+function getVideoThumbnailPlaceholder(video) {
+  return getCustomThumbnail(video);
+}
+
+function escapeAttr(value = "") {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/\"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function extractVideoThumbnail(video) {
+  const src = video?.videoUrl?.trim();
+  if (!src) return Promise.resolve("");
+
+  const cached = thumbnailCache.get(src);
+  if (cached) return Promise.resolve(cached);
+  if (thumbnailJobs.has(src)) return thumbnailJobs.get(src);
+
+  const job = new Promise((resolve) => {
+    const media = document.createElement("video");
+    media.muted = true;
+    media.playsInline = true;
+    media.preload = "auto";
+
+    let settled = false;
+    const finish = (result = "") => {
+      if (settled) return;
+      settled = true;
+      media.pause();
+      media.removeAttribute("src");
+      media.load();
+      resolve(result);
+    };
+
+    const drawFrame = () => {
+      try {
+        const width = media.videoWidth || 640;
+        const height = media.videoHeight || 360;
+        const canvas = document.createElement("canvas");
+        const maxWidth = 960;
+        const scale = Math.min(1, maxWidth / width);
+        canvas.width = Math.max(1, Math.round(width * scale));
+        canvas.height = Math.max(1, Math.round(height * scale));
+
+        const ctx = canvas.getContext("2d", { alpha: false });
+        if (!ctx) return finish("");
+
+        ctx.drawImage(media, 0, 0, canvas.width, canvas.height);
+        const dataUrl = canvas.toDataURL("image/jpeg", 0.84);
+        thumbnailCache.set(src, dataUrl);
+        finish(dataUrl);
+      } catch {
+        finish("");
+      }
+    };
+
+    media.addEventListener("loadeddata", () => {
+      try {
+        const targetTime = media.duration > 0 ? Math.min(0.1, media.duration) : 0;
+        media.currentTime = targetTime;
+      } catch {
+        drawFrame();
+      }
+    }, { once: true });
+
+    media.addEventListener("seeked", drawFrame, { once: true });
+    media.addEventListener("error", () => finish(""), { once: true });
+    window.setTimeout(() => finish(""), 12000);
+    media.src = src;
+  }).finally(() => {
+    thumbnailJobs.delete(src);
+  });
+
+  thumbnailJobs.set(src, job);
+  return job;
+}
+
+function updateVideoThumbElement(element) {
+  if (!element) return;
+  const src = element.dataset.videoSource?.trim();
+  const id = Number(element.dataset.videoThumb);
+  const video = videos.find((item) => item.id === id);
+  if (!video || !src || getCustomThumbnail(video)) return;
+
+  extractVideoThumbnail(video).then((dataUrl) => {
+    if (!dataUrl || !document.body.contains(element)) return;
+    element.style.backgroundImage = `url("${dataUrl}")`;
+    element.classList.add("is-loaded");
+  });
+}
+
+function hydrateVideoThumbnails(root = document) {
+  const elements = [...root.querySelectorAll("[data-video-thumb]")];
+  if (!elements.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach(updateVideoThumbElement);
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      updateVideoThumbElement(entry.target);
+      obs.unobserve(entry.target);
+    });
+  }, { rootMargin: "300px" });
+
+  elements.forEach((element) => observer.observe(element));
 }
 
 /* --------------------------------------------------
@@ -238,7 +347,10 @@ function createVideoCard(video, index = 0, mode = "watch") {
 
   return `
     <article class="video-card reveal reveal--${Math.min(index + 1, 5)}">
-      <div class="video-thumb" style="background-image:url('${getVideoThumbnail(video, index)}')">
+      <div class="video-thumb ${getCustomThumbnail(video) ? "video-thumb--custom" : "video-thumb--video"}"
+        ${getVideoThumbnailPlaceholder(video) ? `style="background-image:url('${escapeAttr(getVideoThumbnailPlaceholder(video))}')"` : ""}
+        data-video-thumb="${video.id}"
+        data-video-source="${escapeAttr(video.videoUrl || "")}">
         <button class="video-play" type="button"
           aria-label="Open ${video.title || "video"}"
           data-open-video="${video.id}">
@@ -263,8 +375,10 @@ function createVideoRow(video, index = 0) {
     <button class="video-row" type="button" data-open-video="${video.id}"
       aria-label="Buka video ${video.title || video.id}">
       <span class="video-row__number">${String(video.id).padStart(2, "0")}</span>
-      <span class="video-row__thumb"
-        style="background-image:url('${getVideoThumbnail(video, index)}')"
+      <span class="video-row__thumb ${getCustomThumbnail(video) ? "video-thumb--custom" : "video-thumb--video"}"
+        ${getVideoThumbnailPlaceholder(video) ? `style="background-image:url('${escapeAttr(getVideoThumbnailPlaceholder(video))}')"` : ""}
+        data-video-thumb="${video.id}"
+        data-video-source="${escapeAttr(video.videoUrl || "")}"
         aria-hidden="true"></span>
       <span class="video-row__content">
         <strong class="video-row__title">${video.title || `Video ${String(video.id).padStart(2, "0")}`}</strong>
@@ -284,8 +398,10 @@ function createVideoRow(video, index = 0) {
 function createWelcomeVideoCard(video, index) {
   return `
     <article class="welcome-video-card reveal reveal--${Math.min(index + 1, 5)}">
-      <div class="welcome-video-card__media"
-        style="background-image:url('${getVideoThumbnail(video, index)}')">
+      <div class="welcome-video-card__media ${getCustomThumbnail(video) ? "video-thumb--custom" : "video-thumb--video"}"
+        ${getVideoThumbnailPlaceholder(video) ? `style="background-image:url('${escapeAttr(getVideoThumbnailPlaceholder(video))}')"` : ""}
+        data-video-thumb="${video.id}"
+        data-video-source="${escapeAttr(video.videoUrl || "")}">
         <div class="welcome-video-card__shade"></div>
         <button class="video-play" type="button"
           aria-label="Preview ${video.title || "video"}"
@@ -661,7 +777,7 @@ function renderPlayer() {
   }
 
   const hasVideoSource = Boolean(video.videoUrl?.trim());
-  const fallbackPoster = getVideoThumbnail(video, video.id - 1);
+  const customPoster = getCustomThumbnail(video);
 
   return `
     <section class="player-page section">
@@ -676,7 +792,7 @@ function renderPlayer() {
                   id="videoElement"
                   class="player__media"
                   src="${video.videoUrl}"
-                  poster="${fallbackPoster}"
+                  ${customPoster ? `poster="${escapeAttr(customPoster)}"` : ""}
                   playsinline
                   preload="metadata"
                 ></video>
@@ -908,6 +1024,7 @@ function renderShell() {
 
   bindShellEvents();
   bindPlayerEvents();
+  hydrateVideoThumbnails(document.querySelector("#main"));
   updateBodyScrollLock();
 }
 
