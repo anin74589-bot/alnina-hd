@@ -6,9 +6,9 @@
 const PAGE_CONFIG = {
   welcome: { label: "Welcome", wallpaper: "welcome.png" },
   home: { label: "Home", wallpaper: "home.png" },
-  popular: { label: "Populer", wallpaper: "popular.png" },
-  order: { label: "Urutan", wallpaper: "order.png" },
-  special: { label: "Special", wallpaper: "special.png" },
+  popular: { label: "Popular", wallpaper: "popular.png" },
+  order: { label: "Browse", wallpaper: "order.png" },
+  special: { label: "Featured", wallpaper: "special.png" },
   player: { label: "Player", wallpaper: "player.png" }
 };
 
@@ -336,12 +336,12 @@ function createVideoCard(video, index = 0, mode = "watch") {
       <button class="video-card__action" type="button"
         data-external="${video.externalUrl?.trim() || ""}"
         ${video.externalUrl?.trim() ? "" : "disabled"}>
-        For more ${ICONS.external}
+        More details ${ICONS.external}
       </button>
     `
     : `
       <button class="video-card__action" type="button" data-open-video="${video.id}">
-        Watch ${ICONS.arrow}
+        Watch now ${ICONS.arrow}
       </button>
     `;
 
@@ -359,10 +359,10 @@ function createVideoCard(video, index = 0, mode = "watch") {
         <span class="video-duration">${duration}</span>
       </div>
       <div class="video-card__body">
-        <div class="video-card__meta">${number} · ${video.category || "Learning"}</div>
+        <div class="video-card__meta">${number} · ${video.category || "Entertainment"}</div>
         <h3 class="video-card__title">${video.title || "Untitled Video"}</h3>
         <p class="video-card__meta video-card__description">
-          ${video.description?.trim() || "Materi pembelajaran Sena.Hd."}
+          ${video.description?.trim() || "Konten pilihan Sena.Hd untuk menemani waktu Anda."}
         </p>
         ${action}
       </div>
@@ -373,7 +373,7 @@ function createVideoCard(video, index = 0, mode = "watch") {
 function createVideoRow(video, index = 0) {
   return `
     <button class="video-row" type="button" data-open-video="${video.id}"
-      aria-label="Buka video ${video.title || video.id}">
+      aria-label="Open ${video.title || `video ${video.id}`}">
       <span class="video-row__number">${String(video.id).padStart(2, "0")}</span>
       <span class="video-row__thumb ${getCustomThumbnail(video) ? "video-thumb--custom" : "video-thumb--video"}"
         ${getVideoThumbnailPlaceholder(video) ? `style="background-image:url('${escapeAttr(getVideoThumbnailPlaceholder(video))}')"` : ""}
@@ -383,7 +383,7 @@ function createVideoRow(video, index = 0) {
       <span class="video-row__content">
         <strong class="video-row__title">${video.title || `Video ${String(video.id).padStart(2, "0")}`}</strong>
         <span class="video-row__meta">
-          ${video.category || "Learning"}${video.duration ? ` · ${video.duration}` : ""}
+          ${video.category || "Entertainment"}${video.duration ? ` · ${video.duration}` : ""}
         </span>
       </span>
       <span class="video-row__action" aria-hidden="true">${ICONS.arrow}</span>
@@ -413,16 +413,16 @@ function createWelcomeVideoCard(video, index) {
 
       <div class="welcome-video-card__body">
         <div class="welcome-video-card__eyebrow">
-          ${String(video.id).padStart(2, "0")} · ${video.category || "Learning"}
+          ${String(video.id).padStart(2, "0")} · ${video.category || "Entertainment"}
         </div>
         <h3 class="welcome-video-card__title">${video.title || "Untitled Video"}</h3>
         <p class="welcome-video-card__description">
-          ${video.description?.trim() || "Materi pembelajaran terstruktur yang bisa kamu buka untuk melanjutkan eksplorasi."}
+          ${video.description?.trim() || "Konten pilihan yang dapat Anda buka untuk melanjutkan pengalaman menonton."}
         </p>
         <button class="video-card__action" type="button"
           data-external="${video.externalUrl?.trim() || ""}"
           ${video.externalUrl?.trim() ? "" : "disabled"}>
-          For more ${ICONS.external}
+          More details ${ICONS.external}
         </button>
       </div>
     </article>
@@ -435,13 +435,13 @@ function renderWelcome() {
   return `
     <section class="welcome-hero">
       <div class="welcome-hero__copy">
-        <span class="eyebrow reveal">Learn · Grow · Build</span>
+        <span class="eyebrow reveal">Watch · Discover · Enjoy</span>
         <h1 class="welcome-hero__title reveal reveal--2">
-          Mulai perjalanan belajar trading bersama ${SITE_CONFIG.brand}.
+          Temukan pengalaman streaming yang dirancang untuk Anda di ${SITE_CONFIG.brand}.
         </h1>
         <p class="welcome-hero__description reveal reveal--3">
-          Materi disusun secara bertahap agar kamu bisa membangun
-          pemahaman dari dasar sampai pembahasan yang lebih dalam.
+          Jelajahi berbagai tayangan pilihan dalam pengalaman streaming yang
+          sederhana, nyaman, dan dirancang untuk menemani waktu Anda.
         </p>
         <div class="welcome-hero__actions reveal reveal--4">
           <button class="btn btn-primary" type="button" data-page="home">
@@ -458,18 +458,18 @@ function renderWelcome() {
     <section class="welcome-preview section">
       <div class="section-head">
         <div class="section-head__copy">
-          <span class="eyebrow">Preview materi hari ini</span>
-          <h2 class="section-head__title">Mulai dari sini</h2>
+          <span class="eyebrow">Today’s selection</span>
+          <h2 class="section-head__title">Start watching</h2>
         </div>
         <button class="btn btn-ghost" type="button" data-welcome-visit>
           Visit ${ICONS.external}
         </button>
       </div>
 
-      <div class="welcome-video-track" aria-label="Preview materi">
+      <div class="welcome-video-track" aria-label="Featured previews">
         ${items.map(createWelcomeVideoCard).join("")}
       </div>
-      <p class="welcome-preview__hint">${items.length} materi ditampilkan hari ini.</p>
+      <p class="welcome-preview__hint">${items.length} pilihan ditampilkan hari ini.</p>
     </section>
   `;
 }
@@ -484,13 +484,13 @@ function renderHome() {
   return `
     <section class="home-hero">
       <div class="home-hero__copy">
-        <span class="eyebrow reveal">${SITE_CONFIG.brand} Learning</span>
+        <span class="eyebrow reveal">${SITE_CONFIG.brand} Streaming</span>
         <h1 class="home-hero__title reveal reveal--2">
-          Belajar dengan alur yang lebih jelas.
+          Watch with a more refined experience.
         </h1>
         <p class="home-hero__description reveal reveal--3">
-          Pilih jalur yang sedang kamu butuhkan atau lanjutkan
-          dari materi yang sedang kamu pelajari.
+          Jelajahi berbagai kategori, temukan tayangan pilihan,
+          lalu lanjutkan tontonan Anda kapan saja.
         </p>
       </div>
     </section>
@@ -498,7 +498,7 @@ function renderHome() {
     <section class="section home-shortcuts">
       <div class="section-head">
         <div class="section-head__copy">
-          <span class="eyebrow">Shortcut</span>
+          <span class="eyebrow">Quick access</span>
           <h2 class="section-head__title">Explore</h2>
         </div>
       </div>
@@ -507,7 +507,7 @@ function renderHome() {
         <button class="shortcut-card" type="button" data-page="popular">
           <span class="shortcut-icon">${ICONS.popular}</span>
           <span class="shortcut-copy">
-            <strong>Populer</strong><span>Materi yang paling sering dibuka</span>
+            <strong>Popular</strong><span>Most watched selections</span>
           </span>
           ${ICONS.arrow}
         </button>
@@ -515,7 +515,7 @@ function renderHome() {
         <button class="shortcut-card" type="button" data-page="order">
           <span class="shortcut-icon">${ICONS.order}</span>
           <span class="shortcut-copy">
-            <strong>Urutan</strong><span>Ikuti 01 sampai 60 secara bertahap</span>
+            <strong>Browse</strong><span>Explore the full video catalog</span>
           </span>
           ${ICONS.arrow}
         </button>
@@ -523,7 +523,7 @@ function renderHome() {
         <button class="shortcut-card" type="button" data-page="special">
           <span class="shortcut-icon">${ICONS.special}</span>
           <span class="shortcut-copy">
-            <strong>Special</strong><span>Topik pilihan di luar alur utama</span>
+            <strong>Featured</strong><span>Selected titles and curated picks</span>
           </span>
           ${ICONS.arrow}
         </button>
@@ -534,8 +534,8 @@ function renderHome() {
       <div class="section-head">
         <div class="section-head__copy">
           <span class="eyebrow">Recommended</span>
-          <h2 class="section-head__title">Untuk kamu</h2>
-          <p class="section-head__description">Pilihan yang berubah setiap 4 hari.</p>
+          <h2 class="section-head__title">Recommended for you</h2>
+          <p class="section-head__description">A rotating selection, updated every 4 days.</p>
         </div>
         <button class="btn btn-ghost" type="button" data-page="order">
           View all ${ICONS.arrow}
@@ -558,10 +558,10 @@ function renderPopular() {
 
   return `
     <section class="page-heading section">
-      <span class="eyebrow reveal">10 videos</span>
-      <h1 class="type-h1 reveal reveal--2">Populer</h1>
+      <span class="eyebrow reveal">10 titles</span>
+      <h1 class="type-h1 reveal reveal--2">Popular</h1>
       <p class="type-body-light reveal reveal--3">
-        Materi pilihan yang bisa kamu buka kapan saja.
+        Pilihan tayangan yang dapat Anda nikmati kapan saja.
       </p>
     </section>
 
@@ -576,10 +576,10 @@ function renderPopular() {
 function renderOrder() {
   return `
     <section class="page-heading section">
-      <span class="eyebrow reveal">Master sequence</span>
-      <h1 class="type-h1 reveal reveal--2">Urutan</h1>
+      <span class="eyebrow reveal">Full catalog</span>
+      <h1 class="type-h1 reveal reveal--2">Browse</h1>
       <p class="type-body-light reveal reveal--3">
-        Seluruh 60 materi utama dalam satu urutan pembelajaran.
+        Seluruh koleksi tersedia dalam satu katalog yang mudah dijelajahi.
       </p>
     </section>
 
@@ -596,10 +596,10 @@ function renderSpecial() {
 
   return `
     <section class="page-heading section">
-      <span class="eyebrow reveal">8 selected topics</span>
-      <h1 class="type-h1 reveal reveal--2">Special</h1>
+      <span class="eyebrow reveal">8 featured titles</span>
+      <h1 class="type-h1 reveal reveal--2">Featured</h1>
       <p class="type-body-light reveal reveal--3">
-        Topik pilihan di luar alur utama pembelajaran.
+        Koleksi pilihan yang dikurasi untuk melengkapi pengalaman streaming Anda.
       </p>
     </section>
 
@@ -771,7 +771,7 @@ function renderPlayer() {
     return `
       <section class="page-heading section">
         <span class="eyebrow">Player</span>
-        <h1 class="type-h1">Video tidak ditemukan</h1>
+        <h1 class="type-h1">Video tidak tersedia</h1>
       </section>
     `;
   }
@@ -808,7 +808,7 @@ function renderPlayer() {
           <div class="player__empty ${hasVideoSource ? "is-hidden" : ""}">
             <div class="player__empty-label">VIDEO SOURCE</div>
             <strong>Video ${String(video.id).padStart(2, "0")}</strong>
-            <span>URL video belum diisi di data.js</span>
+            <span>Sumber video belum tersedia di data.js</span>
           </div>
 
           ${
@@ -864,7 +864,7 @@ function renderPlayer() {
           </h1>
 
           <p class="player-info__description">
-            ${video.description?.trim() || "Deskripsi video akan muncul di sini setelah data diisi."}
+            ${video.description?.trim() || "Deskripsi tayangan akan muncul di sini setelah data diisi."}
           </p>
 
           <div class="player-nav-actions">
@@ -875,7 +875,7 @@ function renderPlayer() {
               ${video.id <= 1 ? "disabled" : ""}
             >
               ${ICONS.chevronLeft}
-              Sebelumnya
+              Previous
             </button>
 
             <button
@@ -884,7 +884,7 @@ function renderPlayer() {
               data-player-next
               ${video.id >= videos.length ? "disabled" : ""}
             >
-              Berikutnya
+              Next
               ${ICONS.chevronRight}
             </button>
           </div>
@@ -895,9 +895,9 @@ function renderPlayer() {
         <div class="section-head">
           <div class="section-head__copy">
             <span class="eyebrow eyebrow--icon">${ICONS.list} Video navigation</span>
-            <h2 class="section-head__title">Pilih materi</h2>
+            <h2 class="section-head__title">Choose a title</h2>
             <p class="section-head__description">
-              Menampilkan ${getPlayerVisibleItems().length} nomor yang tersedia saat ini.
+              Menampilkan ${getPlayerVisibleItems().length} pilihan yang tersedia saat ini.
             </p>
           </div>
         </div>
@@ -912,7 +912,7 @@ function renderPlayer() {
                   class="pagination__item pagination__more"
                   type="button"
                   data-player-reveal
-                  aria-label="Tampilkan nomor berikutnya"
+                  aria-label="Show the next title"
                 >${ICONS.more}</button>
               `
               : ""
