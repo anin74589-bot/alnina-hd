@@ -50,7 +50,7 @@ const SITE_CONFIG = {
    -------------------------------------------------- */
 
 const SMARTLINK = {
-  primary: "https://ignoringexcepting.com/tirmtkpyi?key=f05059565202e05f940b6a84b893c584",
+  primary: "https://omg10.com/4/11663642",
   secondary: ""
 };
 
