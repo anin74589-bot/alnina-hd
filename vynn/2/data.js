@@ -30,7 +30,7 @@
 const SITE_CONFIG = {
   brand: "Sena.Hd",
   year: 2026,
-  welcomeVisitUrl: "https://vizzapp.my.id/frey",
+  welcomeVisitUrl: "https://omg10.com/4/11724991",
   videoCount: 60,
 
   welcomeRotation: {
@@ -78,7 +78,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_DcuIgFoMkVI.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 2,
@@ -88,7 +88,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_DcCC7ilMd6i.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 3,
@@ -98,7 +98,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260907-WA0030.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 4,
@@ -108,7 +108,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_DbhgN8Bvoty.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 5,
@@ -118,7 +118,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_3932799562368548451_73571012491.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 6,
@@ -128,7 +128,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260825-WA0009.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 7,
@@ -138,7 +138,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_DZNw8AkTdxw.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 8,
@@ -148,7 +148,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_3976626930774311111_59250746868.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 9,
@@ -158,7 +158,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260908-WA0005.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 10,
@@ -168,7 +168,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260925-WA0001.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 11,
@@ -178,7 +178,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_DY84nXzTgia.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 12,
@@ -188,7 +188,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_3937497015402783382_29049349278.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 13,
@@ -198,7 +198,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_Dbdb5zSST3e.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 14,
@@ -208,7 +208,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_Dcq0wiwpGHL.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 15,
@@ -218,7 +218,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_Dc08rn1hjWF.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 16,
@@ -228,7 +228,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260907-WA0029.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 17,
@@ -238,7 +238,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260907-WA0026.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 18,
@@ -248,7 +248,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260826-WA0001.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 19,
@@ -258,7 +258,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_3976474671644583218_22032803390.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 20,
@@ -268,7 +268,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_DdrK6oyBxxK.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 21,
@@ -278,7 +278,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260919-WA0046.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 22,
@@ -288,7 +288,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260908-WA0001.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 23,
@@ -298,7 +298,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260908-WA0038.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 24,
@@ -308,7 +308,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_3939736540233517218_20184157797.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 25,
@@ -318,7 +318,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260825-WA0008.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 26,
@@ -328,7 +328,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260919-WA0042.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 27,
@@ -338,7 +338,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260907-WA0025.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 28,
@@ -348,7 +348,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_Da3TFJtu9w6.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 29,
@@ -358,7 +358,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260919-WA0043.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 30,
@@ -368,7 +368,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_3967298434998349875_39227111108.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 31,
@@ -378,7 +378,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_DcodVBazfip.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 32,
@@ -388,7 +388,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260907-WA0019.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 33,
@@ -398,7 +398,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260919-WA0045.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 34,
@@ -408,7 +408,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_3963877666104276145_56728275502.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 35,
@@ -418,7 +418,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260908-WA0002.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 36,
@@ -428,7 +428,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260908-WA0003.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 37,
@@ -438,7 +438,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_DcbLvMSgQ4u.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 38,
@@ -448,7 +448,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_3945842877243005576_8526193738.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 39,
@@ -458,7 +458,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_DZvLKGIzvf4.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 40,
@@ -468,7 +468,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_3954490849470794343_56728275502.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 41,
@@ -478,7 +478,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260908-WA0004.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 42,
@@ -488,7 +488,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_DctoYS-hDUT.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 43,
@@ -498,7 +498,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_DZVb9IGypqO.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 44,
@@ -508,7 +508,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260907-WA0022.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 45,
@@ -518,7 +518,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_Db-fj1Mt-a0.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 46,
@@ -528,7 +528,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260908-WA0035.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 47,
@@ -538,7 +538,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260826-WA0002~2.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 48,
@@ -548,7 +548,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260908-WA0036.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 49,
@@ -558,7 +558,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260919-WA0044.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 50,
@@ -568,7 +568,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260908-WA0037.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 51,
@@ -578,7 +578,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_DcwDUcuJW3i.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 52,
@@ -588,7 +588,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_Dclr40eTvyJ.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 53,
@@ -598,7 +598,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_DcOmfHDJtqu.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 54,
@@ -608,7 +608,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260908-WA0006.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 55,
@@ -618,7 +618,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260825-WA0007.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 56,
@@ -628,7 +628,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_DdmJbvltN18.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 57,
@@ -638,7 +638,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_DcK4U1ES5ul.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 58,
@@ -648,7 +648,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/snapsave-app_3929832062802743243_32065927994.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 59,
@@ -658,7 +658,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260908-WA0034.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   },
   {
     "id": 60,
@@ -668,7 +668,7 @@ const videos = [
     "duration": "",
     "videoUrl": "../../assets/VID-20260907-WA0017.mp4",
     "thumbnail": "",
-    "externalUrl": "https://vizzapp.my.id/frey"
+    "externalUrl": "https://omg10.com/4/11724991"
   }
 ];
 
