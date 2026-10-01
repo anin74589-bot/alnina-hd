@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sena.Hd video landing page." />
+  <title>Lipon.Hd | Hub</title>
+
+  <style>
+    :root {
+      --bg-1: #071a3a;
+      --bg-2: #041126;
+      --surface: rgba(10, 30, 60, 0.84);
+      --surface-border: rgba(255, 255, 255, 0.09);
+      --text: #f5f8ff;
+      --muted: #aab8ce;
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 6%, rgba(52, 105, 181, 0.20), transparent 28%),
+        radial-gradient(circle at 88% 72%, rgba(26, 72, 135, 0.18), transparent 32%),
+        linear-gradient(180deg, var(--bg-1) 0%, #061a37 48%, var(--bg-2) 100%);
+    }
+
+    button,
+    video {
+      font: inherit;
+    }
+
+    .page-shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .top-marquee {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      height: 34px;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.92);
+      border-bottom: 1px solid rgba(255,255,255,0.92);
+      background: rgba(0, 0, 0, 0.20);
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      height: 100%;
+      align-items: center;
+      animation: marquee-left 18s linear infinite;
+    }
+
+    .marquee-item {
+      flex: 0 0 auto;
+      padding: 0 24px;
+      color: #ff8a3d;
+      font-size: 0.70rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    @keyframes marquee-left {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .hero {
+      padding: 58px 0 24px;
+    }
+
+    .hero__panel {
+      min-height: 0;
+      padding: 18px 22px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.055);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.14);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: rgba(245, 248, 255, 0.82);
+      font-size: clamp(0.78rem, 1.05vw, 0.92rem);
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .brand {
+      margin: 4px 0 0;
+      font-size: clamp(2.25rem, 6vw, 4.65rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      margin: 12px 0 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: clamp(0.94rem, 1.7vw, 1.15rem);
+      letter-spacing: 0.04em;
+      font-weight: 500;
+    }
+
+    .video-section {
+      padding: 0 0 74px;
+    }
+
+    .video-list {
+      display: grid;
+      gap: 22px;
+    }
+
+    .video-list--vertical {
+      grid-template-columns: 1fr;
+    }
+
+    .video-list--horizontal {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      margin-top: 22px;
+    }
+
+    .video-card {
+      overflow: hidden;
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .video-card__label {
+      padding: 14px 16px 11px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 500;
+    }
+
+    .player-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: #020918;
+    }
+
+    .player-wrap video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      background: #020918;
+    }
+
+    /* Full-player ad layer. It is active only when the global ad cooldown is ready. */
+    .player-ad-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.86);
+      background: rgba(3, 12, 28, 0.035);
+      backdrop-filter: blur(0.8px);
+      -webkit-backdrop-filter: blur(0.8px);
+      transition: background 180ms ease;
+    }
+
+    .player-ad-layer:hover {
+      background: rgba(3, 12, 28, 0.075);
+    }
+
+    .player-ad-layer[hidden] {
+      display: none !important;
+    }
+
+    .player-ad-badge {
+      position: absolute;
+      top: 11px;
+      right: 11px;
+      padding: 4px 7px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.86);
+      background: rgba(0, 0, 0, 0.18);
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .video-card__footer {
+      padding: 13px 16px 16px;
+    }
+
+    .video-card__title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .video-card__hint {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .site-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(2, 9, 22, 0.44);
+    }
+
+    .footer__inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 34px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .footer__brand {
+      font-size: 1.05rem;
+    }
+
+    .footer__text,
+    .footer__copy {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .footer__copy {
+      margin: 0;
+      text-align: right;
+    }
+
+    @media (max-width: 900px) {
+      .video-list--horizontal {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer__inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer__copy {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page-shell {
+        width: min(100% - 20px, 1180px);
+      }
+
+      .hero {
+        padding: 50px 0 20px;
+      }
+
+      .hero__panel {
+        min-height: 0;
+        padding: 16px 17px 17px;
+        border-radius: 15px;
+      }
+
+      .top-marquee {
+        height: 32px;
+      }
+
+      .marquee-item {
+        padding: 0 18px;
+        font-size: 0.66rem;
+      }
+
+      .video-list {
+        gap: 14px;
+      }
+
+      .video-list--horizontal {
+        display: flex;
+        overflow-x: auto;
+        gap: 14px;
+        padding-bottom: 4px;
+        overscroll-behavior-inline: contain;
+        scroll-snap-type: x mandatory;
+      }
+
+      .video-list--horizontal .video-card {
+        flex: 0 0 min(82vw, 360px);
+        scroll-snap-align: start;
+      }
+
+      .video-card {
+        border-radius: 15px;
+      }
+
+      .video-card__label,
+      .video-card__footer {
+        padding-left: 13px;
+        padding-right: 13px;
+      }
+
+      .footer__inner {
+        width: min(100% - 20px, 1180px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page-shell">
+    <div class="top-marquee" aria-label="Announcement">
+      <div class="marquee-track">
+        <span class="marquee-item">Welcome • Enjoy Watch • 21+Area</span>
+        <span class="marquee-item">Welcome • Enjoy Watch • 21+Area</span>
+        <span class="marquee-item">Welcome • Enjoy Watch • 21+Area</span>
+        <span class="marquee-item">Welcome • Enjoy Watch • 21+Area</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="hero__panel">
+        <p class="eyebrow">Welcome</p>
+        <h1 class="brand">Lipon.Hub</h1>
+      </div>
+      <p class="subtitle">Enjoy Watch</p>
+    </section>
+
+    <section class="video-section" aria-label="Videos">
+      <div class="video-list video-list--vertical" id="verticalVideos"></div>
+      <div class="video-list video-list--horizontal" id="horizontalVideos"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <div>
+        <strong class="footer__brand">Lipon.Hub</strong>
+        <p class="footer__text">Enjoy your watch.</p>
+      </div>
+      <p class="footer__copy">© <span id="year"></span> Lipon.Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script>
+    (() => {
+      "use strict";
+
+      const verticalVideos = document.querySelector("#verticalVideos");
+      const horizontalVideos = document.querySelector("#horizontalVideos");
+      const yearNode = document.querySelector("#year");
+      const cooldownTimers = new Set();
+
+      function getSmartlinkUrl() {
+        return SMARTLINK.primary || SMARTLINK.secondary || "";
+      }
+
+      function getCooldownUntil() {
+        const raw = localStorage.getItem(AD_CONFIG.storageKey);
+        const value = Number(raw);
+        return Number.isFinite(value) ? value : 0;
+      }
+
+      function setCooldown() {
+        const until = Date.now() + AD_CONFIG.cooldownMs;
+        localStorage.setItem(AD_CONFIG.storageKey, String(until));
+        return until;
+      }
+
+      function isAdReady() {
+        return Boolean(getSmartlinkUrl()) && Date.now() >= getCooldownUntil();
+      }
+
+      function updateAllAdLayers() {
+        document.querySelectorAll(".player-ad-layer").forEach((layer) => {
+          layer.hidden = !isAdReady();
+        });
+      }
+
+      function scheduleGlobalRefresh(until) {
+        const remaining = until - Date.now();
+
+        if (remaining <= 0) {
+          updateAllAdLayers();
+          return;
+        }
+
+        const timer = window.setTimeout(() => {
+          cooldownTimers.delete(timer);
+          updateAllAdLayers();
+        }, remaining + 20);
+
+        cooldownTimers.add(timer);
+      }
+
+      function openSmartlink() {
+        const url = getSmartlinkUrl();
+        if (!url || !isAdReady()) return;
+
+        // Lock the global cooldown before opening the Smartlink.
+        const until = setCooldown();
+        updateAllAdLayers();
+        scheduleGlobalRefresh(until);
+
+        window.open(url, "_blank", "noopener,noreferrer");
+      }
+
+      function captureFirstFrame(videoElement, applyThumbnail) {
+        if (!videoElement.currentSrc || videoElement.dataset.thumbnailReady === "true") {
+          return;
+        }
+
+        const capture = document.createElement("video");
+        capture.muted = true;
+        capture.playsInline = true;
+        capture.preload = "auto";
+        capture.src = videoElement.currentSrc;
+
+        const cleanup = () => {
+          capture.removeAttribute("src");
+          capture.load();
+        };
+
+        capture.addEventListener("loadeddata", () => {
+          try {
+            capture.currentTime = 0;
+          } catch {
+            cleanup();
+          }
+        }, { once: true });
+
+        capture.addEventListener("seeked", () => {
+          try {
+            const width = capture.videoWidth;
+            const height = capture.videoHeight;
+            if (!width || !height) {
+              cleanup();
+              return;
+            }
+
+            const canvas = document.createElement("canvas");
+            canvas.width = width;
+            canvas.height = height;
+
+            const context = canvas.getContext("2d", { alpha: false });
+            context.drawImage(capture, 0, 0, width, height);
+            applyThumbnail(canvas.toDataURL("image/jpeg", 0.78));
+            videoElement.dataset.thumbnailReady = "true";
+          } catch {
+            // A remote video without CORS permission may block canvas extraction.
+            // In that case the browser's native first-frame preview remains available.
+          } finally {
+            cleanup();
+          }
+        }, { once: true });
+
+        capture.addEventListener("error", cleanup, { once: true });
+        capture.load();
+      }
+
+      function prepareThumbnail(videoElement) {
+        if (!videoElement.currentSrc || videoElement.dataset.thumbnailStarted === "true") {
+          return;
+        }
+
+        videoElement.dataset.thumbnailStarted = "true";
+
+        const applyThumbnail = (poster) => {
+          if (!videoElement.poster) {
+            videoElement.poster = poster;
+          }
+        };
+
+        videoElement.addEventListener("loadeddata", () => {
+          captureFirstFrame(videoElement, applyThumbnail);
+        }, { once: true });
+
+        if (videoElement.readyState >= 2) {
+          captureFirstFrame(videoElement, applyThumbnail);
+        }
+      }
+
+      function createVideoCard(video) {
+        const card = document.createElement("article");
+        card.className = "video-card";
+
+        const label = `Video ${String(video.id).padStart(2, "0")}`;
+        const description = video.description || "Enjoy watching.";
+        const source = video.videoUrl
+          ? `<source src="${escapeHtml(video.videoUrl)}" type="video/mp4">`
+          : "";
+        const customPoster = video.thumbnail ? ` poster="${escapeHtml(video.thumbnail)}"` : "";
+
+        card.innerHTML = `
+          <div class="video-card__label">${label}</div>
+
+          <div class="player-wrap">
+            <video controls playsinline preload="metadata"${customPoster}>
+              ${source}
+            </video>
+
+            <button
+              class="player-ad-layer"
+              type="button"
+              aria-label="Advertisement"
+              aria-hidden="false"
+            >
+              <span class="player-ad-badge">Advertisement</span>
+            </button>
+          </div>
+
+          <div class="video-card__footer">
+            <h2 class="video-card__title">${escapeHtml(video.title)}</h2>
+            <p class="video-card__hint">${escapeHtml(description)}</p>
+          </div>
+        `;
+
+        const adLayer = card.querySelector(".player-ad-layer");
+        const videoElement = card.querySelector("video");
+
+        adLayer.addEventListener("click", openSmartlink);
+
+        videoElement.addEventListener("loadedmetadata", () => {
+          adLayer.hidden = !isAdReady();
+        });
+
+        // Native HTML5 video does not autoplay. Thumbnail capture is attempted
+        // from the video's first frame without starting playback.
+        if (video.videoUrl && !video.thumbnail) {
+          prepareThumbnail(videoElement);
+        }
+
+        return card;
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function renderVideos() {
+        if (!Array.isArray(VIDEOS)) return;
+
+        VIDEOS.slice(0, 5).forEach((video) => {
+          verticalVideos.appendChild(createVideoCard(video));
+        });
+
+        VIDEOS.slice(5, 10).forEach((video) => {
+          horizontalVideos.appendChild(createVideoCard(video));
+        });
+
+        updateAllAdLayers();
+        scheduleGlobalRefresh(getCooldownUntil());
+      }
+
+      window.addEventListener("storage", (event) => {
+        if (event.key === AD_CONFIG.storageKey) {
+          updateAllAdLayers();
+          scheduleGlobalRefresh(getCooldownUntil());
+        }
+      });
+
+      yearNode.textContent = new Date().getFullYear();
+      renderVideos();
+    })();
+  </script>
+</body>
+</html>
