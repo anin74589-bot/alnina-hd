@@ -18,5 +18,5 @@ const VIDEOS = [
   { id: 7, title: "Rindu Hangat", description: "Tentang rasa untuk dikenang.", videoUrl: "../../assets/snapsave-app_DbhgN8Bvoty.mp4", thumbnail: "" },
   { id: 8, title: "Kenangan Sederhana", description: "Untuk hati yang tetap tinggal.", videoUrl: "../../assets/VID-20260826-WA0001.mp4", thumbnail: "" },
   { id: 9, title: "Cerita Manis", description: "Kenangan manis untuk dikenang.", videoUrl: "../../assets/snapsave-app_3963877666104276145_56728275502.mp4", thumbnail: "" },
-  { id: 10, title: "Rindu Singkat", description: "Satu cerita yang sulit dilupa.", videoUrl: "../../assets/snapsave-app_DcuIgFoMkVI.mp4", thumbnail: "" }
+  { id: 10, title: "Rindu Singkat", description: "Satu cerita yang sulit dilupa.", videoUrl: "../../assets/snapsave-app_DZNw8AkTdwx.mp4", thumbnail: "" }
 ];
