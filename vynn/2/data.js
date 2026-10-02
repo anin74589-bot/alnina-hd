@@ -14,7 +14,7 @@ const VIDEOS = [
   { id: 3, title: "Senja Tenang", description: "Satu cerita untuk dikenang.", videoUrl: "../../assets/snapsave-app_DctoYS-hDUT.mp4", thumbnail: "" },
   { id: 4, title: "Senyum Tenang", description: "Tentang rasa yang begitu indah.", videoUrl: "../../assets/snapsave-app_3932799562368548451_73571012491.mp4", thumbnail: "" },
   { id: 5, title: "Senyum Lama", description: "Untukmu yang terasa hangat.", videoUrl: "../../assets/VID-20260919-WA0046.mp4", thumbnail: "" },
-  { id: 6, title: "Malam Tenang", description: "Untuk hati untuk dikenang.", videoUrl: "../../assets/snapsave-app_DZvLKGIzvf4.mp4", thumbnail: "" },
+  { id: 6, title: "Malam Tenang", description: "Untuk hati untuk dikenang.", videoUrl: "../../assets/snapsave-app_DZvLKGlzvf4.mp4", thumbnail: "" },
   { id: 7, title: "Senja Sederhana", description: "Untuk hati yang sedang rindu.", videoUrl: "../../assets/snapsave-app_Db-fj1Mt-a0.mp4", thumbnail: "" },
   { id: 8, title: "Kisah Sederhana", description: "Untuk hati dari dalam hati.", videoUrl: "../../assets/snapsave-app_3967298434998349875_39227111108.mp4", thumbnail: "" },
   { id: 9, title: "Senja Hangat", description: "Untuk hati yang terasa hangat.", videoUrl: "../../assets/VID-20260908-WA0005.mp4", thumbnail: "" },
