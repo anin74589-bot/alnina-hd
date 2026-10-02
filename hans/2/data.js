@@ -13,7 +13,7 @@ const VIDEOS = [
   { id: 2, title: "Hati Indah", description: "Tentang rasa yang sulit dilupa.", videoUrl: "../../assets/snapsave-app_DdrK6oyBxxK.mp4", thumbnail: "" },
   { id: 3, title: "Cerita Kecil", description: "Sedikit rindu yang sulit dilupa.", videoUrl: "../../assets/VID-20260908-WA0034.mp4", thumbnail: "" },
   { id: 4, title: "Momen Tulus", description: "Sedikit rindu dari dalam hati.", videoUrl: "../../assets/snapsave-app_3945842877243005576_8526193738.mp4", thumbnail: "" },
-  { id: 5, title: "Tatapan Manis", description: "Cerita kecil yang sedang rindu.", videoUrl: "../../assets/snapsave-app_DZNw8AkTdxw.mp4", thumbnail: "" },
+  { id: 5, title: "Tatapan Manis", description: "Cerita kecil yang sedang rindu.", videoUrl: "../../assets/VID-20260908-WA0004.mp4", thumbnail: "" },
   { id: 6, title: "Tatapan Lama", description: "Cerita kecil untuk dikenang.", videoUrl: "../../assets/snapsave-app_DcodVBazfip.mp4", thumbnail: "" },
   { id: 7, title: "Momen Indah", description: "Untukmu yang sedang rindu.", videoUrl: "../../assets/snapsave-app_DcOmfHDJtqu.mp4", thumbnail: "" },
   { id: 8, title: "Rindu Manis", description: "Kenangan manis yang begitu indah.", videoUrl: "../../assets/VID-20260925-WA0003.mp4", thumbnail: "" },
