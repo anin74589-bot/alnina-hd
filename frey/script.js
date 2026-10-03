@@ -437,11 +437,10 @@ function renderWelcome() {
       <div class="welcome-hero__copy">
         <span class="eyebrow reveal">Watch · Discover · Enjoy</span>
         <h1 class="welcome-hero__title reveal reveal--2">
-          Temukan pengalaman streaming yang dirancang untuk Anda di ${SITE_CONFIG.brand}.
+          Video dengan update terbaru ${SITE_CONFIG.brand}.
         </h1>
         <p class="welcome-hero__description reveal reveal--3">
-          Jelajahi berbagai tayangan pilihan dalam pengalaman streaming yang
-          sederhana, nyaman, dan dirancang untuk menemani waktu Anda.
+          Watch hot Videos.
         </p>
         <div class="welcome-hero__actions reveal reveal--4">
           <button class="btn btn-primary" type="button" data-page="home">
@@ -489,8 +488,7 @@ function renderHome() {
           Watch with a more refined experience.
         </h1>
         <p class="home-hero__description reveal reveal--3">
-          Jelajahi berbagai kategori, temukan tayangan pilihan,
-          lalu lanjutkan tontonan Anda kapan saja.
+          Enjoy for watch.
         </p>
       </div>
     </section>
