@@ -1,5 +1,5 @@
 const SMARTLINK = {
-  primary: "https://uplcm.com/4/11724991",
+  primary: "https://uplcm.com/4/10522559",
   secondary: ""
 };
 
