@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>My Projects — Project Links</title>
+  <meta name="description" content="Temukan berbagai project, tools, dan produk digital dalam satu tempat.">
+  <link rel="canonical" href="https://example.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="My Projects — Project Links">
+  <meta property="og:description" content="Temukan berbagai project, tools, dan produk digital dalam satu tempat.">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="My Projects — Project Links">
+  <meta name="twitter:description" content="Temukan berbagai project, tools, dan produk digital dalam satu tempat.">
+  <meta name="twitter:image" content="https://example.com/preview.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23111111'/%3E%3Cpath d='M12 12h16v4H16v4h10v4H16v4h12v4H12z' fill='white'/%3E%3C/svg%3E">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: light;
+  --ink: #171717;
+  --muted: #777777;
+  --line: #e7e7e7;
+  --radius: 4px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: "DM Sans", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { font: inherit; }
+.page-shell {
+  width: min(100% - 40px, 680px);
+  margin: 0 auto;
+  padding: 66px 0 28px;
+}
+.intro { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.eyebrow {
+  margin: 0;
+  color: #858585;
+  font-size: 10px;
+  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+h1, h2, p { overflow-wrap: anywhere; }
+h1 {
+  margin: 10px 0 12px;
+  font: 800 clamp(34px, 7vw, 48px)/1.12 "Manrope", sans-serif;
+  letter-spacing: -.055em;
+}
+h1 span { color: #a5a5a5; }
+.description { max-width: 490px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.link-section { margin-top: 54px; }
+.section-top { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 17px; }
+h2 { margin: 6px 0 0; font: 700 21px/1.3 "Manrope", sans-serif; letter-spacing: -.035em; }
+.link-list { display: grid; gap: 12px; }
+.project-link {
+  --project-accent: #555;
+  --project-tint: #f5f5f5;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 94px;
+  padding: 16px 16px 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: inherit;
+  text-decoration: none;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(20, 20, 20, .035), 0 7px 18px rgba(20, 20, 20, .025);
+  cursor: pointer;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease, background .18s ease;
+}
+.project-link::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 12px;
+  bottom: 12px;
+  width: 3px;
+  border-radius: 0 2px 2px 0;
+  background: var(--project-accent);
+  opacity: .85;
+  transition: top .18s ease, bottom .18s ease;
+}
+.project-link:hover {
+  border-color: color-mix(in srgb, var(--project-accent) 40%, #dedede);
+  background: #fdfdfd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(20, 20, 20, .055), 0 12px 24px rgba(20, 20, 20, .065);
+}
+.project-link:hover::before { top: 7px; bottom: 7px; }
+.project-link:active { transform: translateY(0); box-shadow: 0 1px 3px rgba(20, 20, 20, .06); }
+.project-link:focus-visible { outline: 3px solid #b8c9e6; outline-offset: 3px; }
+.project-icon {
+  width: 44px; height: 44px; flex: 0 0 44px;
+  display: grid; place-items: center;
+  border: 1px solid color-mix(in srgb, var(--project-accent) 20%, #eeeeee);
+  border-radius: 4px;
+  background: var(--project-tint);
+  color: var(--project-accent);
+  transition: transform .18s ease, background .18s ease;
+}
+.project-link:hover .project-icon { transform: translateY(-1px); }
+.project-icon svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.project-copy { min-width: 0; flex: 1; }
+.project-category { display: block; margin-bottom: 4px; color: var(--project-accent); font-size: 9px; line-height: 1.3; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.project-title { display: block; margin-bottom: 4px; font-family: "Manrope", sans-serif; font-size: 14px; line-height: 1.35; font-weight: 800; letter-spacing: -.02em; }
+.project-description { display: block; color: var(--muted); font-size: 12px; line-height: 1.55; }
+.project-action {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  flex: 0 0 auto;
+  min-height: 32px;
+  padding: 0 9px;
+  border: 1px solid #e9e9e9;
+  border-radius: 4px;
+  color: #555;
+  background: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  transition: color .18s ease, background .18s ease, border-color .18s ease;
+}
+.project-action svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .18s ease; }
+.project-link:hover .project-action { color: #fff; background: var(--project-accent); border-color: var(--project-accent); }
+.project-link:hover .project-action svg { transform: translate(1px, -1px); }
+.footer { border-top: 1px solid #eeeeee; margin-top: 52px; padding-top: 20px; display: flex; justify-content: space-between; gap: 12px; color: #969696; font-size: 11px; }
+.footer p { margin: 0; }
+@media (max-width: 520px) {
+  .page-shell { width: min(100% - 30px, 680px); padding-top: 43px; }
+  .link-section { margin-top: 42px; }
+  .project-link { gap: 11px; min-height: 91px; padding: 14px 10px 14px 13px; }
+  .project-icon { width: 40px; height: 40px; flex-basis: 40px; }
+  .project-title { font-size: 13px; }
+  .project-description { font-size: 11px; }
+  .project-action { min-height: 30px; gap: 0; padding: 0 7px; font-size: 0; }
+  .project-action svg { width: 15px; height: 15px; }
+  .footer { flex-direction: column; align-items: center; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+
+/* In-page video player */
+.player-trigger {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: inherit;
+  text-align: left;
+}
+.player-trigger .project-action { white-space: nowrap; }
+.player-modal[hidden] { display: none !important; }
+.player-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  overflow-y: auto;
+  background: rgba(8, 9, 12, .88);
+  backdrop-filter: blur(8px);
+}
+.player-dialog {
+  width: min(100%, 960px);
+  color: #f7f7f7;
+  animation: player-in .18s ease-out;
+}
+.player-dialog-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 0 0 12px;
+}
+.player-heading { min-width: 0; }
+.player-kicker {
+  margin: 0 0 3px;
+  color: #aeb3bd;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.player-title {
+  margin: 0;
+  color: #fff;
+  font: 800 clamp(17px, 3.5vw, 24px)/1.25 "Manrope", sans-serif;
+  letter-spacing: -.03em;
+}
+.player-close {
+  flex: 0 0 auto;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(255,255,255,.08);
+  cursor: pointer;
+  transition: background .18s ease, border-color .18s ease;
+}
+.player-close:hover { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.4); }
+.player-close svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.player-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  background: #08090b;
+  box-shadow: 0 25px 80px rgba(0,0,0,.35);
+  isolation: isolate;
+}
+.player-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #08090b;
+}
+.player-empty-state {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px;
+  color: #c5c8cf;
+  text-align: center;
+  background: radial-gradient(ellipse at center, #1a1c22 0%, #0b0c0f 72%);
+}
+.player-empty-state[hidden] { display: none !important; }
+.player-empty-icon {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  place-items: center;
+  border: 1px solid #373b45;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(255,255,255,.06);
+}
+.player-empty-icon svg { width: 25px; height: 25px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.player-empty-title { margin: 0; color: #fff; font: 700 15px/1.4 "Manrope", sans-serif; }
+.player-empty-copy { max-width: 400px; margin: 0; color: #9da2ad; font-size: 12px; line-height: 1.65; }
+.player-empty-copy code { color: #e5e7eb; font-size: 11px; }
+/* The popup ad and social rail are deliberately positioned inside .player-stage. */
+.player-ad-popup {
+  position: absolute;
+  z-index: 5;
+  left: 16px;
+  bottom: 16px;
+  width: min(390px, calc(100% - 86px));
+  padding: 14px 15px 13px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 8px;
+  color: #f9fafb;
+  background: rgba(20,22,27,.96);
+  box-shadow: 0 12px 36px rgba(0,0,0,.36);
+  backdrop-filter: blur(10px);
+  animation: ad-in .22s ease-out;
+}
+.player-ad-popup[hidden] { display: none !important; }
+.player-ad-top { display: flex; align-items: center; gap: 8px; padding-right: 24px; }
+.player-ad-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 20px;
+  padding: 2px 6px;
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: 3px;
+  color: #cbd5e1;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+.player-ad-caption { color: #9da3ad; font-size: 10px; }
+.player-ad-title { margin: 9px 0 4px; font: 800 14px/1.35 "Manrope", sans-serif; }
+.player-ad-copy { margin: 0; color: #bdc2cc; font-size: 11px; line-height: 1.55; }
+.player-ad-actions { display: flex; align-items: center; gap: 9px; margin-top: 11px; }
+.player-ad-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 29px;
+  padding: 0 11px;
+  border: 1px solid #f1f2f4;
+  border-radius: 4px;
+  color: #17191d;
+  background: #f1f2f4;
+  font-size: 10px;
+  font-weight: 800;
+  text-decoration: none;
+}
+.player-ad-note { color: #8e95a1; font-size: 9px; }
+.player-ad-dismiss {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 50%;
+  color: #e6e8ed;
+  background: rgba(255,255,255,.06);
+  cursor: pointer;
+}
+.player-ad-dismiss svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.player-social-bar {
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transform: translateY(-50%);
+}
+.player-social-bar a, .player-social-bar button {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(21,23,28,.88);
+  cursor: pointer;
+  transition: transform .16s ease, background .16s ease;
+  text-decoration: none;
+}
+.player-social-bar a:hover, .player-social-bar button:hover { transform: translateY(-2px); background: #333842; }
+.player-social-bar svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.player-status {
+  min-height: 22px;
+  margin: 10px 2px 0;
+  color: #b7bbc4;
+  font-size: 11px;
+  line-height: 1.5;
+}
+@keyframes player-in { from { opacity: 0; transform: translateY(8px) scale(.99); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes ad-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 520px) {
+  .player-modal { padding: 12px; }
+  .player-dialog-top { margin-bottom: 9px; }
+  .player-close { width: 36px; height: 36px; }
+  .player-stage { border-radius: 7px; }
+  .player-ad-popup { left: 8px; bottom: 8px; width: calc(100% - 61px); padding: 10px; }
+  .player-ad-title { margin-top: 6px; font-size: 12px; }
+  .player-ad-copy { font-size: 10px; }
+  .player-ad-actions { margin-top: 8px; }
+  .player-ad-cta { min-height: 26px; padding: 0 8px; }
+  .player-social-bar { right: 7px; gap: 6px; }
+  .player-social-bar a, .player-social-bar button { width: 31px; height: 31px; }
+  .player-social-bar svg { width: 15px; height: 15px; }
+  .player-empty-copy { font-size: 10px; }
+  .player-empty-icon { width: 43px; height: 43px; }
+  .player-empty-icon svg { width: 19px; height: 19px; }
+  .player-empty-title { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .player-dialog, .player-ad-popup { animation: none; }
+}
+
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="intro">
+      <p class="eyebrow">PROJECT DIRECTORY</p>
+      <h1>My Projects<span>.</span></h1>
+      <p class="description">
+        Kumpulan project, tools, dan produk digital yang bisa kamu jelajahi.
+        Pilih project di bawah untuk menonton video atau membuka tautan eksternal.
+      </p>
+    </header>
+
+    <section class="link-section" aria-labelledby="links-heading">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow">EXPLORE</p>
+          <h2 id="links-heading">Daftar project</h2>
+        </div>
+      </div>
+
+      <div class="link-list" id="link-list" aria-live="polite"><!-- Kartu project dibuat oleh JavaScript di bawah. -->
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> My Projects</p>
+      <p>Made for sharing projects simply.</p>
+    </footer>
+  </main>
+  <script>
+/*
+  PENGATURAN PROJECT
+  - Tiga project pertama membuka player di halaman ini.
+  - Isi videoUrl dengan URL file video langsung (contoh .mp4/.webm).
+  - Project keempat tetap menjadi tautan keluar.
+  - Iklan di bawah adalah slot UI; atur adConfig dan adUrl untuk menghubungkan materi iklan.
+*/
+const projects = [
+  {
+    title: "Zeebooth",
+    description: "Photobooth online dengan efek kamera.",
+    category: "Camera experience",
+    videoUrl: "",
+    icon: "camera",
+    accent: "#5279b9",
+    tint: "#edf3fc"
+  },
+  {
+    title: "Trazel",
+    description: "Trading journal dan tools trading.",
+    category: "Trading tools",
+    videoUrl: "",
+    icon: "chart",
+    accent: "#41856a",
+    tint: "#eaf5ef"
+  },
+  {
+    title: "Project Website",
+    description: "Tonton video project website.",
+    category: "Web project",
+    videoUrl: "",
+    icon: "video",
+    accent: "#8063b5",
+    tint: "#f1edfa"
+  },
+  {
+    title: "Digital Product",
+    description: "Jelajahi produk digital yang tersedia.",
+    category: "Digital product",
+    href: "https://example.com/product",
+    icon: "box",
+    accent: "#b17a3d",
+    tint: "#fbf1e5"
+  }
+];
+
+/* Slot iklan popup di dalam player. Isi adUrl jika CTA harus membuka halaman sponsor. */
+const adConfig = {
+  title: "Ruang promosi di dalam player",
+  description: "Materi iklan tampil di atas area video, bukan di halaman daftar project.",
+  adUrl: "",
+  buttonText: "Lihat penawaran"
+};
+
+const iconMarkup = {
+  camera: '<rect x="3" y="7" width="18" height="14" rx="3"></rect><circle cx="12" cy="14" r="3"></circle><path d="M8 7l1.5-3h5L16 7"></path>',
+  chart: '<path d="M4 19V5"></path><path d="M4 19h17"></path><path d="m7 15 4-4 3 2 5-6"></path>',
+  video: '<rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m10 9 5 3-5 3z"></path><path d="M8 22h8"></path>',
+  box: '<path d="m12 3 9 5-9 5-9-5 9-5Z"></path><path d="m3 8 9 5 9-5M3 8v9l9 5 9-5V8M12 13v9"></path>'
+};
+
+const list = document.getElementById("link-list");
+const modal = document.getElementById("player-modal");
+const playerVideo = document.getElementById("player-video");
+const emptyState = document.getElementById("player-empty-state");
+const adPopup = document.getElementById("player-ad-popup");
+const playerTitle = document.getElementById("player-title");
+const playerStatus = document.getElementById("player-status");
+const adCta = document.getElementById("player-ad-cta");
+const adNote = document.getElementById("player-ad-note");
+let activeProject = null;
+let previousFocus = null;
+
+function escapeHTML(value = "") {
+  return String(value).replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
+
+function safeHref(value) {
+  try {
+    const url = new URL(value, window.location.href);
+    return ["http:", "https:"].includes(url.protocol) ? url.href : "#";
+  } catch {
+    return "#";
+  }
+}
+
+function safeColor(value, fallback) {
+  return /^#[0-9a-f]{3,8}$/i.test(value) ? value : fallback;
+}
+
+function projectCard(project, index) {
+  const icon = iconMarkup[project.icon] || iconMarkup.video;
+  const accent = safeColor(project.accent, "#777777");
+  const tint = safeColor(project.tint, "#f5f5f5");
+  const isVideoProject = index < 3;
+  const commonContent = `
+    <span class="project-icon" aria-hidden="true"><svg viewBox="0 0 24 24">${icon}</svg></span>
+    <span class="project-copy">
+      <span class="project-category">${escapeHTML(project.category)}</span>
+      <span class="project-title">${escapeHTML(project.title)}</span>
+      <span class="project-description">${escapeHTML(project.description)}</span>
+    </span>
+    <span class="project-action">${isVideoProject ? "WATCH VIDEO" : "OPEN PROJECT"}
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg>
+    </span>`;
+  const style = `--project-accent:${accent};--project-tint:${tint}`;
+
+  if (isVideoProject) {
+    return `<button class="project-link player-trigger" type="button" data-project-index="${index}" aria-label="Putar video ${escapeHTML(project.title)}" style="${style}">${commonContent}</button>`;
+  }
+  return `<a class="project-link external-link" href="${escapeHTML(safeHref(project.href))}" target="_blank" rel="noopener noreferrer" style="${style}">${commonContent}</a>`;
+}
+
+list.innerHTML = projects.slice(0, 4).map(projectCard).join("");
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.getElementById("player-ad-title").textContent = adConfig.title;
+document.getElementById("player-ad-copy").textContent = adConfig.description;
+if (adConfig.adUrl && safeHref(adConfig.adUrl) !== "#") {
+  adCta.href = safeHref(adConfig.adUrl);
+  adCta.textContent = adConfig.buttonText || "Lihat penawaran";
+  adCta.hidden = false;
+  adNote.textContent = "Konten sponsor";
+}
+
+function updateShareLinks(project) {
+  const pageUrl = window.location.href.split("#")[0];
+  const shareText = `Tonton ${project.title} di ${document.title}`;
+  const encodedUrl = encodeURIComponent(pageUrl);
+  const encodedText = encodeURIComponent(shareText);
+  document.getElementById("share-whatsapp").href = `https://wa.me/?text=${encodedText}%20${encodedUrl}`;
+  document.getElementById("share-facebook").href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+  document.getElementById("share-x").href = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
+}
+
+function openPlayer(index) {
+  const project = projects[index];
+  if (!project || index > 2) return;
+  activeProject = project;
+  previousFocus = document.activeElement;
+  playerTitle.textContent = project.title;
+  playerVideo.pause();
+  playerVideo.removeAttribute("src");
+  playerVideo.load();
+
+  const videoUrl = typeof project.videoUrl === "string" ? project.videoUrl.trim() : "";
+  if (videoUrl && safeHref(videoUrl) !== "#") {
+    playerVideo.src = safeHref(videoUrl);
+    playerVideo.hidden = false;
+    emptyState.hidden = true;
+    playerStatus.textContent = "Video siap diputar. Iklan dan tombol sosial ditampilkan di dalam area player.";
+    playerVideo.load();
+  } else {
+    playerVideo.hidden = true;
+    emptyState.hidden = false;
+    playerStatus.textContent = "Player terbuka. Isi properti videoUrl pada data project untuk menampilkan video asli.";
+  }
+
+  adPopup.hidden = false;
+  updateShareLinks(project);
+  modal.hidden = false;
+  document.body.style.overflow = "hidden";
+  document.getElementById("player-close").focus();
+}
+
+function closePlayer() {
+  if (modal.hidden) return;
+  playerVideo.pause();
+  playerVideo.removeAttribute("src");
+  playerVideo.load();
+  modal.hidden = true;
+  document.body.style.overflow = "";
+  adPopup.hidden = false;
+  if (previousFocus && typeof previousFocus.focus === "function") previousFocus.focus();
+}
+
+list.addEventListener("click", (event) => {
+  const trigger = event.target.closest("[data-project-index]");
+  if (!trigger) return;
+  openPlayer(Number(trigger.dataset.projectIndex));
+});
+
+document.getElementById("player-close").addEventListener("click", closePlayer);
+document.getElementById("player-ad-dismiss").addEventListener("click", () => {
+  adPopup.hidden = true;
+  playerStatus.textContent = "Iklan ditutup. Tombol berbagi tetap tersedia di dalam player.";
+});
+modal.addEventListener("click", (event) => {
+  if (event.target === modal) closePlayer();
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !modal.hidden) closePlayer();
+});
+document.getElementById("share-copy").addEventListener("click", async () => {
+  const shareUrl = window.location.href.split("#")[0];
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(shareUrl);
+    } else {
+      const temp = document.createElement("textarea");
+      temp.value = shareUrl;
+      temp.style.position = "fixed";
+      temp.style.opacity = "0";
+      document.body.appendChild(temp);
+      temp.select();
+      const copied = document.execCommand("copy");
+      temp.remove();
+      if (!copied) throw new Error("Copy command unavailable");
+    }
+    playerStatus.textContent = "Tautan halaman berhasil disalin.";
+  } catch {
+    playerStatus.textContent = "Tautan tidak bisa disalin otomatis. Silakan salin URL halaman dari address bar.";
+  }
+});
+</script>
+
+  <section class="player-modal" id="player-modal" role="dialog" aria-modal="true" aria-labelledby="player-title" hidden>
+    <div class="player-dialog">
+      <div class="player-dialog-top">
+        <div class="player-heading">
+          <p class="player-kicker">NOW PLAYING</p>
+          <h2 class="player-title" id="player-title">Video player</h2>
+        </div>
+        <button class="player-close" id="player-close" type="button" aria-label="Tutup video player">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+      <div class="player-stage" id="player-stage">
+        <video class="player-video" id="player-video" controls playsinline preload="metadata" hidden>
+          Browser kamu belum mendukung pemutar video HTML5.
+        </video>
+        <div class="player-empty-state" id="player-empty-state">
+          <span class="player-empty-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m9 6 10 6-10 6z"></path><path d="M4 4v16"></path></svg>
+          </span>
+          <p class="player-empty-title">Video siap dipasang</p>
+          <p class="player-empty-copy">Tambahkan URL video langsung, misalnya MP4 atau WebM, pada properti <code>videoUrl</code> di data project dalam script.</p>
+        </div>
+
+        <aside class="player-ad-popup" id="player-ad-popup" aria-label="Iklan di dalam video player">
+          <button class="player-ad-dismiss" id="player-ad-dismiss" type="button" aria-label="Tutup iklan">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+          </button>
+          <div class="player-ad-top">
+            <span class="player-ad-label">IKLAN</span>
+            <span class="player-ad-caption">Sponsored placement</span>
+          </div>
+          <h3 class="player-ad-title" id="player-ad-title">Ruang promosi di dalam player</h3>
+          <p class="player-ad-copy" id="player-ad-copy">Materi iklan tampil di atas area video, bukan di halaman daftar project.</p>
+          <div class="player-ad-actions">
+            <a class="player-ad-cta" id="player-ad-cta" href="#" target="_blank" rel="noopener noreferrer" hidden>Lihat penawaran</a>
+            <span class="player-ad-note" id="player-ad-note">Popup iklan · bisa ditutup</span>
+          </div>
+        </aside>
+
+        <nav class="player-social-bar" aria-label="Bagikan video">
+          <a id="share-whatsapp" href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="Bagikan ke WhatsApp" title="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"></path><path d="M9 8.2c.3-.5.7-.4.9 0l.6 1.4c.1.3 0 .5-.3.8l-.4.4c.5 1 1.3 1.8 2.4 2.3l.5-.5c.2-.2.4-.3.7-.1l1.4.7c.3.2.4.5.2.8-.3.6-.9 1-1.6 1-2.5-.2-5.5-3.2-5.7-5.6 0-.5.5-1.1 1.3-1.2Z"></path></svg>
+          </a>
+          <a id="share-facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Bagikan ke Facebook" title="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h2.7l.4-3H14V8.1c0-.9.3-1.5 1.6-1.5h1.7V4a20 20 0 0 0-2.5-.1c-2.5 0-4.2 1.5-4.2 4.3V10H8v3h2.6v8"></path></svg>
+          </a>
+          <a id="share-x" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Bagikan ke X" title="X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 4 16 16M20 4 4 20M7 4h4l6 8 1 1 3 7h-4l-6-8-1-1z"></path></svg>
+          </a>
+          <button id="share-copy" type="button" aria-label="Salin tautan halaman" title="Salin tautan">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg>
+          </button>
+        </nav>
+      </div>
+      <p class="player-status" id="player-status" aria-live="polite">Iklan dan tombol sosial berada di dalam area video player.</p>
+    </div>
+  </section>
+
+</body>
+</html>
