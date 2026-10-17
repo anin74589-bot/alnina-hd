@@ -5,37 +5,37 @@
 */
 const projects = [
   {
-    title: "Zeebooth",
-    description: "Photobooth online dengan efek kamera.",
+    title: "Vizey.Hbo",
+    description: "Asupan Terkini Hanya Untuk Kalian.",
     category: "Camera experience",
-    href: "https://example.com/zeebooth",
+    href: "https://vizzapp.my.id/fe3/vid",
     icon: "video",
     accent: "#5279b9",
     tint: "#edf3fc"
   },
   {
-    title: "Trazel",
-    description: "Trading journal dan tools trading.",
+    title: "Vidoy.Hd",
+    description: "Jelajahi Pemersatu Bangsa Kesukaan Kalian.",
     category: "Trading tools",
-    href: "https://example.com/trazel",
+    href: "https://vizzapp.my.id/fe3/vid2",
     icon: "video",
     accent: "#41856a",
     tint: "#eaf5ef"
   },
   {
-    title: "Project Website",
-    description: "Lihat project website terbaru.",
-    category: "Web project",
-    href: "https://example.com/project-website",
-    icon: "video",
+    title: "Lainnya...",
+    description: "Vidio Lengkap Bernutrisi.",
+    category: "Videos",
+    href: "https://vizzapp.my.id/fe3/stream",
+    icon: "box",
     accent: "#8063b5",
     tint: "#f1edfa"
   },
   {
-    title: "Digital Product",
-    description: "Jelajahi produk digital yang tersedia.",
-    category: "Digital product",
-    href: "https://example.com/product",
+    title: "Lanjut",
+    description: "Video Berupa Link.",
+    category: "Next",
+    href: "https://vizzapp.my.id/",
     icon: "box",
     accent: "#b17a3d",
     tint: "#fbf1e5"
