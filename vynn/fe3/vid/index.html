@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090b">
+  <meta name="description" content="Video player">
+  <title>Video Player</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --background: #08090b;
+      --surface: #111318;
+      --text: #f5f6f8;
+      --muted: #858b98;
+      --line: rgba(255,255,255,.10);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: var(--background);
+    }
+    body {
+      color: var(--text);
+      min-height: 100vh;
+      min-height: 100dvh;
+    }
+    main {
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      margin: 0;
+    }
+    .player {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      isolation: isolate;
+      background: #000;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      max-height: none;
+      object-fit: contain;
+      object-position: center center;
+      background: #000;
+    }
+    .empty-state[hidden] { display: none !important; }
+    .empty-state {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-content: center;
+      justify-items: center;
+      gap: 12px;
+      padding: 24px;
+      text-align: center;
+      pointer-events: none;
+      background: radial-gradient(ellipse at center, #15171c 0%, #08090b 72%);
+    }
+    .play-mark {
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 50%;
+      color: #fff;
+      background: rgba(255,255,255,.06);
+    }
+    .play-mark svg { width: 23px; height: 23px; margin-left: 3px; fill: currentColor; }
+    .empty-title { margin: 0; font-size: clamp(14px, 2vw, 17px); font-weight: 650; letter-spacing: -.02em; }
+    .empty-note { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    @media (max-width: 600px) {
+      .play-mark { width: 52px; height: 52px; }
+    }
+  </style>
+  <script src="https://ignoringexcepting.com/4a/cb/b5/4acbb59e6479fb9b932669d8538f995e.js"></script>
+</head>
+<body>
+  <main aria-label="Video player">
+    <section class="player" aria-label="Pemutar video">
+      <video id="video" controls playsinline preload="auto" controlsList="nodownload" aria-label="Video"></video>
+      <div class="empty-state" id="empty-state">
+        <span class="play-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M7 4.8c0-.8.9-1.3 1.6-.9l11 7.1a1.2 1.2 0 0 1 0 2L8.6 20.1c-.7.4-1.6-.1-1.6-.9V4.8Z"/></svg>
+        </span>
+        <p class="empty-title">Video Player</p>
+        <p class="empty-note">Tambahkan URL video pada konfigurasi di index.html.</p>
+      </div>
+    </section>
+  </main>
+  <script>
+    // Ganti dengan URL file video langsung yang berakhiran .mp4 atau .webm.
+    const VIDEO_URL = "https://vizzapp.my.id/assets/VID-20260908-WA0005.mp4";
+
+    const video = document.getElementById("video");
+    const emptyState = document.getElementById("empty-state");
+
+    // Try to build a poster from an early frame so the player has a real
+    // thumbnail before playback. This works when the video host permits
+    // drawing its frames to canvas; otherwise the video can still play normally.
+    let posterAttempted = false;
+
+    async function createPosterFromVideoFrame() {
+      if (posterAttempted || !video.currentSrc) return;
+      posterAttempted = true;
+
+      try {
+        if (video.readyState < HTMLMediaElement.HAVE_CURRENT_DATA) {
+          await new Promise((resolve, reject) => {
+            const onData = () => { cleanup(); resolve(); };
+            const onError = () => { cleanup(); reject(new Error("Video data could not be loaded")); };
+            const cleanup = () => {
+              video.removeEventListener("loadeddata", onData);
+              video.removeEventListener("error", onError);
+            };
+            video.addEventListener("loadeddata", onData, { once: true });
+            video.addEventListener("error", onError, { once: true });
+          });
+        }
+
+        if (!video.videoWidth || !video.videoHeight) return;
+
+        // A tiny offset avoids grabbing a totally empty decoder frame at t=0.
+        const sampleTime = Number.isFinite(video.duration) && video.duration > 0
+          ? Math.min(0.12, video.duration / 2)
+          : 0;
+
+        if (sampleTime > 0 && Math.abs(video.currentTime - sampleTime) > 0.02) {
+          await new Promise((resolve) => {
+            const finish = () => { clearTimeout(timer); resolve(); };
+            video.addEventListener("seeked", finish, { once: true });
+            const timer = setTimeout(finish, 2500);
+            try { video.currentTime = sampleTime; } catch (_) { finish(); }
+          });
+        }
+
+        const canvas = document.createElement("canvas");
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        const context = canvas.getContext("2d");
+        if (!context) return;
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        video.poster = canvas.toDataURL("image/jpeg", 0.88);
+      } catch (error) {
+        // Cross-origin video hosts may block canvas capture. Leave native video
+        // playback untouched instead of preventing the video from working.
+        console.info("Could not generate an automatic video poster.", error);
+      } finally {
+        // Keep the video paused at the beginning after sampling its first frame.
+        if (video.paused && video.currentTime > 0) {
+          try { video.currentTime = 0; } catch (_) {}
+        }
+      }
+    }
+
+    if (VIDEO_URL && VIDEO_URL !== "PASTE_VIDEO_URL_HERE") {
+      video.src = VIDEO_URL;
+      video.load();
+      emptyState.hidden = true;
+    }
+
+    video.addEventListener("loadeddata", () => {
+      emptyState.hidden = true;
+      createPosterFromVideoFrame();
+    });
+    video.addEventListener("error", () => {
+      if (!video.currentSrc) emptyState.hidden = false;
+    });
+  </script>
+  <script src="https://ignoringexcepting.com/60/91/28/609128e2d75f768ed64765276ee8c3a7.js"></script>
+</body>
+</html>
