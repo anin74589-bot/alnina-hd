@@ -7,7 +7,7 @@ const projects = [
   {
     title: "Vizey.Hbo",
     description: "Asupan Terkini Hanya Untuk Kalian.",
-    category: "Camera experience",
+    category: "Videos",
     href: "https://vizzapp.my.id/vynn/fe3/vid",
     icon: "video",
     accent: "#5279b9",
@@ -16,7 +16,7 @@ const projects = [
   {
     title: "Vidoy.Hd",
     description: "Jelajahi Pemersatu Bangsa Kesukaan Kalian.",
-    category: "Trading tools",
+    category: "Videos",
     href: "https://vizzapp.my.id/vynn/fe3/vid2",
     icon: "video",
     accent: "#41856a",
@@ -35,7 +35,7 @@ const projects = [
     title: "Lanjut",
     description: "Video Berupa Link.",
     category: "Next",
-    href: "https://vizzapp.my.id/",
+    href: "https://vizzapp.my.id/vynn/1",
     icon: "box",
     accent: "#b17a3d",
     tint: "#fbf1e5"
