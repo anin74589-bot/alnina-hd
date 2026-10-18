@@ -1,13 +1,13 @@
-/* CMine.Flex: master video data + website logic + SmartLink settings.
+/* screamu.HD: master video data + website logic + SmartLink settings.
    Edit VIDEO_CONFIG.smartlinkUrl, VIDEO_CONFIG.websiteUrl, and each video's file/thumbnail below. */
 const VIDEO_CONFIG = {
-  smartlinkUrl: "https://ignoringexcepting.com/tirmtkpyi?key=f05059565202e05f940b6a84b893c584",
+  smartlinkUrl: "PASTE_YOUR_SINGLE_SMARTLINK_URL_HERE",
   websiteUrl: "YOUR_WEBSITE_URL_HERE",
   smartlinkCooldownMs: 20000
 };
 
 const VIDEOS = [
-  { id: 1, title: "Video 01", file: "@itssel.na[HD]_Tmate.cc_1768854241.mp4", thumbnail: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=80" },
+  { id: 1, title: "Video 01", file: "GITHUB_VIDEO_URL_01", thumbnail: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=80" },
   { id: 2, title: "Video 02", file: "GITHUB_VIDEO_URL_02", thumbnail: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" },
   { id: 3, title: "Video 03", file: "GITHUB_VIDEO_URL_03", thumbnail: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80" },
   { id: 4, title: "Video 04", file: "GITHUB_VIDEO_URL_04", thumbnail: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" },
@@ -97,7 +97,7 @@ const VIDEOS = [
       <div class="video-card__content">
         <span class="video-card__meta">VIDEO ${String(video.id).padStart(2, "0")}</span>
         <h3 class="video-card__title">${escapeHtml(video.title)}</h3>
-        <div class="video-card__sub">CMine.Flex collection</div>
+        <div class="video-card__sub">screamu.HD collection</div>
         <button class="video-card__button js-watch" type="button" data-video-id="${video.id}"><span>Tonton</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button>
       </div>
     </article>`;
@@ -223,7 +223,7 @@ const VIDEOS = [
     catalogApp.hidden = true;
     playerHeader.hidden = false;
     playerApp.hidden = false;
-    document.title = "CMine.Flex · Player";
+    document.title = "screamu.HD · Player";
     shuffledIds = createDailyOrder();
     renderNumbers();
     loadVideo(getRequestedId(), false);
@@ -233,7 +233,7 @@ const VIDEOS = [
     catalogApp.hidden = false;
     playerHeader.hidden = true;
     playerApp.hidden = true;
-    document.title = "CMine.Flex";
+    document.title = "screamu.HD";
     renderLists();
     const hash = location.hash.replace("#", "");
     showSection(hash || "home");
