@@ -7,11 +7,11 @@ const VIDEO_CONFIG = {
 };
 
 const VIDEOS = [
-  { id: 1, title: "Video 01", file: "https://vizzapp.my.id/assets/snapsave-app_DdrK6oyBxxK.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
-  { id: 2, title: "Video 02", file: "https://vizzapp.my.id/assets/snapsave-app_DdmJbvltN18.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
-  { id: 3, title: "Video 03", file: "https://vizzapp.my.id/assets/snapsave-app_DcwDUcuJW3i.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
-  { id: 4, title: "Video 04", file: "https://vizzapp.my.id/assets/snapsave-app_DctoYS-hDUT.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
-  { id: 5, title: "Video 05", file: "https://vizzapp.my.id/assets/snapsave-app_Dcq0wiwpGHL.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 1, title: "Video 01", file: "https://vizzapp.my.id/assets/snapsave-app_DdrK6oyBxxK.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/IMG_20261017_202910.jpg" },
+  { id: 2, title: "Video 02", file: "https://vizzapp.my.id/assets/snapsave-app_DdmJbvltN18.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/IMG_20261017_203005.jpg" },
+  { id: 3, title: "Video 03", file: "https://vizzapp.my.id/assets/snapsave-app_DcwDUcuJW3i.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/IMG_20261017_203032.jpg" },
+  { id: 4, title: "Video 04", file: "https://vizzapp.my.id/assets/snapsave-app_DctoYS-hDUT.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/IMG_20261017_203149.jpg" },
+  { id: 5, title: "Video 05", file: "https://vizzapp.my.id/assets/snapsave-app_Dcq0wiwpGHL.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/IMG_20261017_203236.jpg" },
   { id: 6, title: "Video 06", file: "https://vizzapp.my.id/assets/snapsave-app_DcbLvMSgQ4u.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
   { id: 7, title: "Video 07", file: "https://vizzapp.my.id/assets/snapsave-app_DcUIgFoMkVI.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
   { id: 8, title: "Video 08", file: "https://vizzapp.my.id/assets/snapsave-app_DcOmfHDJtqu.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
