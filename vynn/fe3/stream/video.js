@@ -22,11 +22,11 @@ const VIDEOS = [
   { id: 13, title: "Video 13", file: "https://vizzapp.my.id/assets/VID-20260919-WA0046.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
   { id: 14, title: "Video 14", file: "https://vizzapp.my.id/assets/VID-20260919-WA0045.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
   { id: 15, title: "Video 15", file: "https://vizzapp.my.id/assets/VID-20260919-WA0044.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
-  { id: 16, title: "Video 16", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
-  { id: 17, title: "Video 17", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
-  { id: 18, title: "Video 18", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
-  { id: 19, title: "Video 19", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
-  { id: 20, title: "Video 20", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" }
+  { id: 16, title: "Video 16", file: "https://vizzapp.my.id/assets/VID-20260908-WA0036.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 17, title: "Video 17", file: "https://vizzapp.my.id/assets/VID-20260908-WA0035.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 18, title: "Video 18", file: "https://vizzapp.my.id/assets/VID-20260908-WA0034.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 19, title: "Video 19", file: "https://vizzapp.my.id/assets/VID-20260908-WA0006.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 20, title: "Video 20", file: "https://vizzapp.my.id/assets/VID-20260908-WA0005.mp4", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" }
 ];
 
 (() => {
