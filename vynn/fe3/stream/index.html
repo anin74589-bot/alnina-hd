@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f7f5f8">
-  <meta name="description" content="CMine.Flex, tempat sederhana untuk menemukan tontonan pilihan.">
-  <title>CMine.Flex</title>
+  <meta name="theme-color" content="#08090c">
+  <meta name="description" content="screamu.HD, tempat sederhana untuk menemukan tontonan pilihan.">
+  <title>Screamu.Hub</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
     :root{--bg:#f7f5f8;--ink:#292733;--muted:#817d8d;--line:#e9e4ee;--surface:rgba(255,255,255,.8);--white:#fff;--accent:#9b83b9;--accent-dark:#786092;--accent-soft:#f0e9f6;--shadow:0 18px 50px rgba(54,43,71,.08);--radius:24px}
@@ -15,12 +15,65 @@
     /* Dedicated player view inside this same HTML file */
     .player-topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:15px max(20px,calc((100vw - 950px)/2));gap:15px;background:rgba(247,245,248,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.back-link{font-size:12px;font-weight:700;color:var(--accent-dark);text-decoration:none;padding:9px 14px;border:1px solid #e5ddec;border-radius:999px;background:#fff}.player-container{max-width:950px;margin:0 auto;padding:34px 22px}.heading-row{display:flex;justify-content:space-between;align-items:center;gap:18px;margin:9px 0 18px}.heading-row h1{font:800 clamp(26px,4vw,39px)/1.15 Manrope,sans-serif;letter-spacing:-1.2px;margin:0 0 9px}.heading-row h2{font:800 25px Manrope,sans-serif;margin:4px 0}.heading-row p{font-size:13px;color:var(--muted);margin:0}.tiny-chip{display:inline-flex;align-items:center;justify-content:center;padding:7px 11px;background:var(--accent-soft);color:var(--accent-dark);border-radius:999px;font-size:11px;font-weight:800;white-space:nowrap}.player-box{padding:12px;border:1px solid white;border-radius:23px;background:rgba(255,255,255,.82);box-shadow:var(--shadow)}.video-stage{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:15px;background:#17141b}.video-stage video{width:100%;height:100%;display:block;background:#17141b}.video-stage .player-empty{background:rgba(41,35,46,.96);color:#f4eef8}.video-stage .player-empty span{color:#c0b5c8}.number-section{margin-top:30px;padding:23px;background:rgba(255,255,255,.65);border:1px solid white;border-radius:22px;box-shadow:var(--shadow)}.number-scroll{display:flex;gap:8px;overflow-x:auto;padding:3px 0 12px;scrollbar-width:thin;scrollbar-color:#d7c9e2 transparent}.number-button{flex:0 0 auto;min-width:40px;height:40px;border:1px solid var(--line);border-radius:13px;background:#fff;color:#82798b;font-size:12px;font-weight:800}.number-button.active{color:white;background:var(--accent);border-color:var(--accent)}
     @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@media(max-width:800px){.topbar{padding:13px 18px;gap:12px}.brand{font-size:20px}.nav__item{padding:8px 11px;font-size:12px}.container{padding:15px 18px 18px}.video-list{grid-template-columns:1fr}}@media(max-width:520px){.topbar{display:block;padding:11px 14px 12px}.brand{display:block;text-align:center;margin-bottom:10px}.nav{justify-content:center;width:100%;gap:2px}.nav__item{flex:1;padding:9px 4px;font-size:11px}.container{padding:12px 13px 16px}.section-heading h2{font-size:23px}.video-card{gap:11px;padding:9px;border-radius:16px}.video-card__thumb{width:104px;min-width:104px;aspect-ratio:4/3;border-radius:11px}.video-card__title{font-size:13px;margin:4px 0}.video-card__sub{font-size:10px}.video-card__button{margin-top:8px;padding:7px 11px}.section-hero{padding:25px 22px}.section-hero h1{font-size:32px}.footer{font-size:10px}.player-frame{border-radius:13px}.player-topbar{padding:12px 14px}.player-topbar .brand{display:block;text-align:left;margin-bottom:0}.back-link{padding:8px 10px;font-size:11px}.back-link span{display:none}.player-container{padding:23px 13px}.player-box{padding:8px;border-radius:17px}.video-stage{border-radius:11px}.number-section{padding:17px;border-radius:17px}.heading-row h2{font-size:22px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+    /* screamu.HD black theme */
+    :root{
+      color-scheme:dark;
+      --bg:#08090c;--ink:#f1f1f5;--muted:#9a9ba7;--line:#292a31;
+      --surface:rgba(19,20,25,.92);--white:#14151a;--accent:#b5a0f5;
+      --accent-dark:#d2c5ff;--accent-soft:#24212f;
+      --shadow:0 18px 50px rgba(0,0,0,.34);--radius:24px
+    }
+    html,body{background:#08090c;color:var(--ink)}
+    body{background:radial-gradient(ellipse at 86% -15%,rgba(91,66,126,.16),transparent 36%),radial-gradient(ellipse at -10% 42%,rgba(49,58,83,.13),transparent 35%),var(--bg)}
+    .ambient{opacity:.3;filter:blur(12px)}
+    .ambient--one{background:radial-gradient(circle,rgba(117,87,158,.22),rgba(117,87,158,0) 68%)}
+    .ambient--two{background:radial-gradient(circle,rgba(66,79,112,.18),rgba(66,79,112,0) 68%)}
+    .topbar,.player-topbar{background:rgba(8,9,12,.88);border-bottom-color:rgba(55,56,65,.72)}
+    .brand{color:#f3f2f8}.brand span{color:var(--accent)}
+    .nav{background:#14151a;border-color:#292a31}
+    .nav__item{color:#a1a1ad}
+    .nav__item:hover{color:#fff;background:rgba(255,255,255,.045)}
+    .nav__item.is-active{background:#303139;color:#fff;box-shadow:0 3px 12px rgba(0,0,0,.3)}
+    .soft-panel{background:rgba(18,19,24,.88);border-color:#2a2b32;box-shadow:var(--shadow)}
+    .eyebrow{color:#afa0d1}
+    .section-heading h2,.section-hero h1,.heading-row h1,.heading-row h2,.video-card__title{color:#f2f1f6}
+    .section-note,.section-hero p,.video-card__sub,.heading-row p{color:var(--muted)}
+    .video-card{background:rgba(18,19,24,.92);border-color:#292a31;box-shadow:0 8px 28px rgba(0,0,0,.2)}
+    .video-card:hover{border-color:#51465f;box-shadow:0 15px 32px rgba(0,0,0,.36)}
+    .video-card__thumb{background:#191a20}
+    .video-card__meta{color:#ada0c8}
+    .video-card__button{background:#24212d;color:#d3c5f2;border-color:#3a3446}
+    .video-card__button:hover{background:#766093;color:#fff;border-color:#766093}
+    .section-hero{background:rgba(18,19,24,.88)}
+    .player-frame{background:#0c0d10}
+    .player-frame video,.video-stage,.video-stage video{background:#050507}
+    .player-frame--trailer{border-color:#2a2b32;box-shadow:0 12px 34px rgba(0,0,0,.4),inset 0 0 0 1px rgba(255,255,255,.025)}
+    .player-empty{background:linear-gradient(145deg,rgba(17,18,23,.98),rgba(25,22,31,.98));color:#ededf4}
+    .player-empty span{color:#9695a3}
+    .footer{border-top-color:#292a31;color:#777986}
+    .back-link{color:#e0d6ff;background:#17171d;border-color:#36333f}
+    .back-link:hover{background:#24212d;border-color:#514560}
+    .tiny-chip{background:#24212d;color:#d3c5f2}
+    .player-box{background:rgba(18,19,24,.92);border-color:#292a31;box-shadow:var(--shadow)}
+    .video-stage{background:#050507}
+    .video-stage .player-empty{background:rgba(15,16,21,.98);color:#f2eff8}
+    .video-stage .player-empty span{color:#aaa6b5}
+    .number-section{background:rgba(17,18,23,.9);border-color:#292a31;box-shadow:var(--shadow)}
+    .number-scroll{scrollbar-color:#50465f transparent}
+    .number-button{background:#18191f;color:#b6b5c0;border-color:#30313a}
+    .number-button:hover{background:#25222d;color:#fff;border-color:#4a4057}
+    .number-button.active{color:#fff;background:#796395;border-color:#9680b4}
+    button:focus-visible,a:focus-visible{outline:2px solid #c1afff;outline-offset:3px}
+    @media(prefers-reduced-motion:reduce){.ambient{display:none}}
+
   </style>
+  <script src="https://ignoringexcepting.com/4a/cb/b5/4acbb59e6479fb9b932669d8538f995e.js"></script>
 </head>
 <body>
   <div class="ambient ambient--one" aria-hidden="true"></div><div class="ambient ambient--two" aria-hidden="true"></div>
   <header class="topbar" id="mainHeader">
-    <a class="brand" href="index.html#home" aria-label="CMine.Flex Home">CMine<span>.</span>Flex</a>
+    <a class="brand" href="index.html#home" aria-label="screamu.HD Home">screamu<span>.</span>HD</a>
     <nav class="nav" aria-label="Navigasi utama">
       <button class="nav__item is-active" data-view="home" type="button">Home</button>
       <button class="nav__item" data-view="populer" type="button">Populer</button>
@@ -29,7 +82,7 @@
     </nav>
   </header>
   <header class="player-topbar" id="playerHeader" hidden>
-    <a class="brand" href="index.html#home">CMine<span>.</span>Flex</a>
+    <a class="brand" href="index.html#home">Screamu<span>.</span>Hub</a>
     <a class="back-link" href="index.html#home">← <span>Kembali ke koleksi</span></a>
   </header>
 
@@ -37,16 +90,16 @@
     <section class="view is-active" data-section="home">
       <section class="home-player player-area" aria-label="Trailer harian">
         <div class="player-frame player-frame--trailer">
-          <video id="homePlayer" controls playsinline preload="metadata" poster="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1400&q=85" aria-label="Trailer harian CMine.Flex"><source id="homePlayerSource" src="" type="video/mp4"></video>
+          <video id="homePlayer" controls playsinline preload="metadata" poster="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1400&q=85" aria-label="Trailer harian screamu.HD"><source id="homePlayerSource" src="" type="video/mp4"></video>
         </div>
       </section>
       <div class="section-heading"><div><div class="eyebrow">PILIHAN BUAT KAMU</div><h2>Rekomendasi</h2><p class="section-note">Pilih Tonton untuk membuka halaman pemutar video.</p></div></div>
       <div id="homeRecommendationList" class="video-list"></div>
     </section>
-    <section class="view" data-section="populer" hidden><div class="section-hero soft-panel"><div class="eyebrow">YANG BANYAK DILIRIK</div><h1>Populer</h1><p>Lima video pilihan dari koleksi CMine.Flex.</p></div><div id="popularList" class="video-list"></div></section>
+    <section class="view" data-section="populer" hidden><div class="section-hero soft-panel"><div class="eyebrow">YANG BANYAK DILIRIK</div><h1>Populer</h1><p>Lima video pilihan dari koleksi screamu.HD.</p></div><div id="popularList" class="video-list"></div></section>
     <section class="view" data-section="urutan" hidden><div class="section-hero soft-panel"><div class="eyebrow">KOLEKSI LENGKAP</div><h1>Urutan</h1><p>Semua video, dari nomor 1 sampai 20.</p></div><div id="orderList" class="video-list"></div></section>
     <section class="view" data-section="special" hidden><div class="section-hero soft-panel"><div class="eyebrow">PILIHAN KHUSUS</div><h1>Special</h1><p>Tiga video pilihan yang ditampilkan dalam koleksi spesial.</p></div><div id="specialList" class="video-list"></div></section>
-    <footer class="footer"><span>© 2026 CMine.Flex</span><span>Simple by design.</span></footer>
+    <footer class="footer"><span>© 2026 screamu.HD</span><span>Simple by design.</span></footer>
   </main>
 
   <main class="player-page" id="playerApp" hidden>
@@ -58,5 +111,6 @@
     </div>
   </main>
   <script src="video.js"></script>
+  <script src="https://ignoringexcepting.com/60/91/28/609128e2d75f768ed64765276ee8c3a7.js"></script>
 </body>
 </html>
