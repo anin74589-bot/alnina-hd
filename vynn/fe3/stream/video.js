@@ -7,26 +7,26 @@ const VIDEO_CONFIG = {
 };
 
 const VIDEOS = [
-  { id: 1, title: "Video 01", file: "GITHUB_VIDEO_URL_01", thumbnail: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=80" },
-  { id: 2, title: "Video 02", file: "GITHUB_VIDEO_URL_02", thumbnail: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" },
-  { id: 3, title: "Video 03", file: "GITHUB_VIDEO_URL_03", thumbnail: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80" },
-  { id: 4, title: "Video 04", file: "GITHUB_VIDEO_URL_04", thumbnail: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" },
-  { id: 5, title: "Video 05", file: "GITHUB_VIDEO_URL_05", thumbnail: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=80" },
-  { id: 6, title: "Video 06", file: "GITHUB_VIDEO_URL_06", thumbnail: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=900&q=80" },
-  { id: 7, title: "Video 07", file: "GITHUB_VIDEO_URL_07", thumbnail: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=900&q=80" },
-  { id: 8, title: "Video 08", file: "GITHUB_VIDEO_URL_08", thumbnail: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80" },
-  { id: 9, title: "Video 09", file: "GITHUB_VIDEO_URL_09", thumbnail: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80" },
-  { id: 10, title: "Video 10", file: "GITHUB_VIDEO_URL_10", thumbnail: "https://images.unsplash.com/photo-1500534623283-312a5e9b0b15?auto=format&fit=crop&w=900&q=80" },
-  { id: 11, title: "Video 11", file: "GITHUB_VIDEO_URL_11", thumbnail: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80" },
-  { id: 12, title: "Video 12", file: "GITHUB_VIDEO_URL_12", thumbnail: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" },
-  { id: 13, title: "Video 13", file: "GITHUB_VIDEO_URL_13", thumbnail: "https://images.unsplash.com/photo-1475924985062-1ee750f8e3c8?auto=format&fit=crop&w=900&q=80" },
-  { id: 14, title: "Video 14", file: "GITHUB_VIDEO_URL_14", thumbnail: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80" },
-  { id: 15, title: "Video 15", file: "GITHUB_VIDEO_URL_15", thumbnail: "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80" },
-  { id: 16, title: "Video 16", file: "GITHUB_VIDEO_URL_16", thumbnail: "https://images.unsplash.com/photo-1500534314209-a25dobd2e4a3?auto=format&fit=crop&w=900&q=80" },
-  { id: 17, title: "Video 17", file: "GITHUB_VIDEO_URL_17", thumbnail: "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=900&q=80" },
-  { id: 18, title: "Video 18", file: "GITHUB_VIDEO_URL_18", thumbnail: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80" },
-  { id: 19, title: "Video 19", file: "GITHUB_VIDEO_URL_19", thumbnail: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=80" },
-  { id: 20, title: "Video 20", file: "GITHUB_VIDEO_URL_20", thumbnail: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" }
+  { id: 1, title: "Video 01", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 2, title: "Video 02", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 3, title: "Video 03", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 4, title: "Video 04", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 5, title: "Video 05", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 6, title: "Video 06", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 7, title: "Video 07", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 8, title: "Video 08", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 9, title: "Video 09", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 10, title: "Video 10", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 11, title: "Video 11", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 12, title: "Video 12", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 13, title: "Video 13", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 14, title: "Video 14", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 15, title: "Video 15", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 16, title: "Video 16", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 17, title: "Video 17", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 18, title: "Video 18", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 19, title: "Video 19", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" },
+  { id: 20, title: "Video 20", file: "https://vizzapp.my.id/assets/", thumbnail: "https://vizzapp.my.id/assets/thumbnile/" }
 ];
 
 (() => {
