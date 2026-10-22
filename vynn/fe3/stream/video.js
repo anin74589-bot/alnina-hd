@@ -1,7 +1,7 @@
 /* screamu.HD: master video data + website logic + SmartLink settings.
    Edit VIDEO_CONFIG.smartlinkUrl, VIDEO_CONFIG.websiteUrl, and each video's file/thumbnail below. */
 const VIDEO_CONFIG = {
-  smartlinkUrl: "PASTE_YOUR_SINGLE_SMARTLINK_URL_HERE",
+  smartlinkUrl: "https://ignoringexcepting.com/tirmtkpyi?key=f05059565202e05f940b6a84b893c584",
   websiteUrl: "YOUR_WEBSITE_URL_HERE",
   smartlinkCooldownMs: 20000
 };
