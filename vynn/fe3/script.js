@@ -5,7 +5,7 @@
 */
 const projects = [
   {
-    title: "Vizey.Hbo",
+    title: "LIVE MALAM MALAM",
     description: "Asupan Terkini Hanya Untuk Kalian.",
     category: "Videos",
     href: "https://vizzapp.my.id/vynn/fe3/vid",
@@ -14,7 +14,7 @@ const projects = [
     tint: "#edf3fc"
   },
   {
-    title: "Vidoy.Hd",
+    title: "LIVE FULL MALAM",
     description: "Jelajahi Pemersatu Bangsa Kesukaan Kalian.",
     category: "Videos",
     href: "https://vizzapp.my.id/vynn/fe3/vid2",
@@ -23,7 +23,7 @@ const projects = [
     tint: "#eaf5ef"
   },
   {
-    title: "Lainnya...",
+    title: "NEXT LEBIH BANYAK VIDEO NYA...",
     description: "Vidio Lengkap Bernutrisi.",
     category: "Videos",
     href: "https://vizzapp.my.id/vynn/fe3/stream",
@@ -32,7 +32,7 @@ const projects = [
     tint: "#f1edfa"
   },
   {
-    title: "Lanjut",
+    title: "KOLEKSI MALAM BERIKUTNYA...",
     description: "Video Berupa Link.",
     category: "Next",
     href: "https://vizzapp.my.id/vynn/1",
