@@ -1,5 +1,5 @@
 const SMARTLINK = {
-  primary: "https://ignoringexcepting.com/sm06fscu?key=e4d85effead9f6c696d84ed6b6984375",
+  primary: "https://uplcm.com/4/12194616",
   secondary: ""
 };
 
